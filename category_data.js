@@ -26,6 +26,7 @@ let objHTML = {
   'Background/Background': ['1.png https://', '2.jpeg https://',],
   'Input/Input': ['1.jpg https://'],
   'Animation-Transition/Animation-Transition': ['1.png https://','2.jpg https://'],
+  'Scroll-bar/Scroll-bar': ['1.jpeg https://'],
   'Media-CSS/Media-CSS': ['1.png https://'],
   'Emmet/Emmet': ['1.png https://', 'article.png https://clck.ru/3Tn2Do'],
   'Справочник/Spravochnik': ['article.png https://clck.ru/3Tn2Nv'],
