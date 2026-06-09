@@ -25,6 +25,7 @@ let objHTML = {
   'Grid/Grid': ['1.png https://','2.jpeg https://'],
   'Background/Background': ['1.png https://', '2.jpeg https://',],
   'Input/Input': ['1.jpg https://'],
+  'Filter/Filter': ['1.png https://'],
   'Animation-Transition/Animation-Transition': ['1.png https://','2.jpg https://'],
   'Scroll-bar/Scroll-bar': ['1.jpeg https://'],
   'Media-CSS/Media-CSS': ['1.png https://'],
