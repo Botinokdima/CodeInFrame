@@ -26,6 +26,7 @@ let objHTML = {
   'Background/Background': ['1.png https://', '2.jpeg https://',],
   'Input/Input': ['1.jpg https://'],
   'Filter/Filter': ['1.png https://'],
+  'Shape-Outside/Shape-Outside': ['1.jpeg https://','2.png https://bennettfeely.com/clippy/',],
   'Animation-Transition/Animation-Transition': ['1.png https://','2.jpg https://'],
   'Scroll-bar/Scroll-bar': ['1.jpeg https://'],
   'Media-CSS/Media-CSS': ['1.png https://'],
