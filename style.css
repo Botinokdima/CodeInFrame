@@ -73,15 +73,15 @@ body {
 }
 
 #start_left_block {
-    background: url(block_js.png) center/cover;
+    background: url(block_js.webp) center/cover;
 }
 
 #start_right_block {
-    background: url(block_html.png) center/cover;
+    background: url(block_html.webp) center/cover;
 }
 
 #start_bookmarks_block {
-    background: url(block_bookmarks.png) center/cover;
+    background: url(block_bookmarks.webp) center/cover;
 }
 
 #start_left_block.active,
