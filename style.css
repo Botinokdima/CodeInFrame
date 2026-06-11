@@ -45,7 +45,7 @@ body {
 #main_container {
     width: 100vw;
     min-height: 100vh;
-    background: url(bg.png) center/cover;
+    background: url(bg_web.webp) center/cover;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -110,7 +110,7 @@ body {
     width: 200px;
     height: 200px;
     border: 2px solid beige;
-    background: url(menu_resize\ \(1\).png) no-repeat center/cover;
+    background: url(menu_resize.png) no-repeat center/cover;
     margin: 20px;
     font-size: 45px;
     color: orange;
