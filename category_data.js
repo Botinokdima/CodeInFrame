@@ -9,7 +9,7 @@ let objJS = {
     '12.png https://'
   ],
   'Функции/Funkcii': [],
-  'AddEventListener()/AddEventListener()': ['1.webp https://'],
+  'AddEventListener()/AddEventListener()': ['1.webp https://','article.webp https://clck.ru/3U8ZpM'],
   'Деструктуризация/Destrukturizaciya': ['1.jpeg https://'],
   'Создание-элемента/Sozdanie-elementa': ['1.jpeg https://','2.png https://'],
   'Таймеры/Tajmery': ['1.webp https://'],
