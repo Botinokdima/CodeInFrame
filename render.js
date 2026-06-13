@@ -18,6 +18,14 @@ let translateTransform = false
 localStorage.getItem('bookmarks') != null ? arrBOOKMARKS = JSON.parse(localStorage.getItem('bookmarks')) : arrBOOKMARKS = [];
 
 
+
+
+
+
+
+
+
+
 /**
  * Рендерит меню категорий
  */
@@ -143,6 +151,16 @@ for (const category of content) {
   })
 
 }
+
+
+
+  // var msnry = new Masonry(mainContainer, {
+  //   itemSelector: '.box',
+  //   columnWidth: 200, // Ширина одной колонки (можно указать селектор или процент)
+  //   percentPosition: true, // Чтобы колонки тянулись в процентах
+  //   gutter: 16 // Отступ между блоками
+  // });
+
 
 // -----------------------
 

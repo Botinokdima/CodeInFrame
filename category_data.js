@@ -26,6 +26,8 @@ let objHTML = {
   'Flex/Flex': ['1.jpg https://', 'article.png https://clck.ru/3Tmyte'],
   'Grid/Grid': ['1.png https://','2.jpeg https://'],
   'Background/Background': ['1.png https://', '2.jpeg https://',],
+  'Font/Font': ['1.webp https://'],
+  'Border/Border': ['1.webp https://'],
   'Input/Input': ['1.jpg https://'],
   'Filter/Filter': ['1.png https://'],
   'Text-Stroke/Text-Stroke': ['1.webp https://'],
