@@ -38,6 +38,7 @@ let objHTML = {
   'Media-CSS/Media-CSS': ['1.png https://'],
   'Emmet/Emmet': ['1.png https://', 'article.png https://clck.ru/3Tn2Do'],
   'Справочник/Spravochnik': ['article.png https://clck.ru/3Tn2Nv'],
+  'Online-generator-css/online-generator-css': ['1.webp https://webcode.tools/'],
   'path': ['HTML']
 }
 
