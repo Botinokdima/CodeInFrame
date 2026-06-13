@@ -8,7 +8,7 @@ let objJS = {
   'События/Sobytiya': ['1.png https://', '2.png https://', '3.png https://', '4.png https://', '5.png https://', '6.png https://', '7.png https://', '8.png https://', '9.png https://', '10.png https://', '11.png https://',
     '12.png https://'
   ],
-  'Функции/Funkcii': [],
+  'Функции/Funkcii': ['1.webp https://'],
   'AddEventListener()/AddEventListener()': ['1.webp https://','article.webp https://clck.ru/3U8ZpM'],
   'Деструктуризация/Destrukturizaciya': ['1.jpeg https://'],
   'Создание-элемента/Sozdanie-elementa': ['1.jpeg https://','2.png https://'],
