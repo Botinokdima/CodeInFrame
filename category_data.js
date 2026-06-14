@@ -23,7 +23,7 @@ let objJS = {
 }
 
 let objHTML = {
-  'Input/Input': ['1.webp https://', '2.webp https://'],
+  'Input/Input': ['1.webp https://', '2.webp https://', '3.webp https://'],
   'Emmet/Emmet': ['1.webp https://', 'article.webp https://clck.ru/3Tn2Do'],
   'path': ['HTML']
 }
