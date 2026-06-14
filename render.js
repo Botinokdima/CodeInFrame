@@ -1,9 +1,8 @@
 // ==================== КОНСТАНТЫ И ПЕРЕМЕННЫЕ ====================
 
 let mainContainer = document.querySelector('#main_container');
+let btnBack = document.querySelectorAll('.back');
 let navContainer = document.querySelector('#nav_container');
-let startLeftBlock = document.querySelector('#start_left_block');
-let startRightBlock = document.querySelector('#start_right_block');
 let startBookmarksBlock = document.querySelector('#start_bookmarks_block');
 let content = document.querySelectorAll('.content');
 let menuBlock = document.querySelectorAll('.menu_block')
@@ -16,12 +15,6 @@ let mainChildren = mainContainer.children;
 let arrBOOKMARKS
 let translateTransform = false
 localStorage.getItem('bookmarks') != null ? arrBOOKMARKS = JSON.parse(localStorage.getItem('bookmarks')) : arrBOOKMARKS = [];
-
-
-
-
-
-
 
 
 
@@ -39,30 +32,40 @@ for (const category of content) {
     else if (category.dataset.category == 'HTML') {
       obj = objHTML
     }
+    else if (category.dataset.category == 'CSS') {
+      obj = objCSS
+    }
 
-    if (step == 1) {
-      step++
-      mainContainer.innerHTML = ''
-      navContainer.classList.add('active')
-      content.forEach(elem => { elem.classList.add('active') })
+    rendercategory()
 
-      for (const key in obj) {
+  })
 
-        let folder = key.split('/')
+}
 
-        if (key != 'path') {
-          let menuBox = createElems('div', mainContainer, folder[0], 'menu_block', key);
 
-          menuBox.addEventListener('click', function () {
+function rendercategory() {
+  if (step == 1) {
+    step++
+    mainContainer.innerHTML = ''
+    navContainer.classList.add('active')
+    btnBack.forEach(elem => { elem.classList.add('active') })
 
-            step = 1
-            mainContainer.innerHTML = ''
+    for (const key in obj) {
 
-            for (const elems of obj[menuBox.getAttribute('data-category')]) {
+      let folder = key.split('/')
 
-              let res = elems.split(' ')
+      if (key != 'path') {
+        let menuBox = createElems('div', mainContainer, folder[0], 'menu_block', key);
 
-              mainContainer.insertAdjacentHTML('beforeEnd', `<div class="box">
+        menuBox.addEventListener('click', function () {
+          step = 1
+          mainContainer.innerHTML = ''
+
+          for (const elems of obj[this.getAttribute('data-category')]) {
+
+            let res = elems.split(' ')
+
+            mainContainer.insertAdjacentHTML('beforeEnd', `<div class="box">
          <div class="head_munu">
             <span class="btn_head btn_add_save" title="добавить в избранное"></span>
             <a href="${res[1]}" target="_blank" title="переход по ссылке" class="btn_head btn_go_site"></a>
@@ -72,95 +75,84 @@ for (const category of content) {
             </div>
          </div>`)
 
-              for (let i = 0; i < mainChildren.length; i++) {
-
-                strPath = obj.path + '/' + folder[1] + '/' + obj[menuBox.getAttribute('data-category')][i]
-
-                for (let j = 0; j < arrBOOKMARKS.length; j++) {
-
-                  if (arrBOOKMARKS[j].startsWith(strPath)) {
-                    mainChildren[i].children[0].children[0].classList.add('addBookmarks');
-                  }
-
-                }
-              }
-            }
-
-
             for (let i = 0; i < mainChildren.length; i++) {
 
-              mainChildren[i].addEventListener('click', function (e) {
+              strPath = obj.path + '/' + folder[1] + '/' + obj[this.getAttribute('data-category')][i]
 
-                if (e.target.tagName == 'SPAN') {
-                  strPath = obj.path + '/' + folder[1] + '/' + obj[menuBox.getAttribute('data-category')][i]
+              for (let j = 0; j < arrBOOKMARKS.length; j++) {
 
-                  if (!e.target.classList.contains('addBookmarks')) {
-                    arrBOOKMARKS.push(strPath)
-                    saveBookmarks(arrBOOKMARKS)
-                    e.target.classList.add('addBookmarks')
+                if (arrBOOKMARKS[j].startsWith(strPath)) {
+                  mainChildren[i].children[0].children[0].classList.add('addBookmarks');
+                }
 
-                  } else {
-                    e.target.classList.remove('addBookmarks')
+              }
+            }
+          }
 
-                    for (let j = 0; j < arrBOOKMARKS.length; j++) {
 
-                      if (arrBOOKMARKS[j].startsWith(strPath)) {
-                        arrBOOKMARKS.splice(j, 1);
-                        saveBookmarks(arrBOOKMARKS)
-                      }
+          for (let i = 0; i < mainChildren.length; i++) {
 
+            mainChildren[i].addEventListener('click', e => {
+
+              if (e.target.tagName == 'SPAN') {
+                strPath = obj.path + '/' + folder[1] + '/' + obj[this.getAttribute('data-category')][i]
+
+
+                if (!e.target.classList.contains('addBookmarks')) {
+                  arrBOOKMARKS.push(strPath)
+                  saveBookmarks(arrBOOKMARKS)
+                  e.target.classList.add('addBookmarks')
+
+                } else {
+                  e.target.classList.remove('addBookmarks')
+
+                  for (let j = 0; j < arrBOOKMARKS.length; j++) {
+
+                    if (arrBOOKMARKS[j].startsWith(strPath)) {
+                      arrBOOKMARKS.splice(j, 1);
+                      saveBookmarks(arrBOOKMARKS)
                     }
+
                   }
                 }
+              }
 
-                if (e.target.tagName == 'IMG') {
+              if (e.target.tagName == 'IMG') {
 
-                  let over = createElems('div', document.body, '', 'over')
+                let over = createElems('div', document.body, '', 'over')
 
-                  over.addEventListener('click', () => over.remove())
+                over.addEventListener('click', () => over.remove())
 
-                  let imgOver = createElems('img', over, '', 'imgOver')
-                  imgOver.src = e.target.src
-                  imgOver.loading = 'lazy'
+                let imgOver = createElems('img', over, '', 'imgOver')
+                imgOver.src = e.target.src
+                imgOver.loading = 'lazy'
 
-                  imgOver.addEventListener('wheel', e => scrollImg(imgOver, e))
-                  imgOver.addEventListener('click', e => e.stopPropagation())
-                  imgOver.addEventListener('dragstart', e => e.preventDefault())
-                  imgOver.addEventListener('mousedown', e => positionImg(imgOver))
+                imgOver.addEventListener('wheel', e => scrollImg(imgOver, e))
+                imgOver.addEventListener('click', e => e.stopPropagation())
+                imgOver.addEventListener('dragstart', e => e.preventDefault())
+                imgOver.addEventListener('mousedown', e => positionImg(imgOver))
 
-                }
+              }
 
-              })
-            }
+            })
+          }
+        })
 
-          })
-        }
       }
-
     }
 
-    else if (step == 2) {
+  }
 
-      step = 1
-      mainContainer.innerHTML = ''
-      navContainer.classList.remove('active')
-      content.forEach(elem => { elem.classList.remove('active') })
-
-    }
-
-  })
+  else if (step == 2) {
+    step = 1
+    mainContainer.innerHTML = ''
+    navContainer.classList.remove('active')
+    btnBack.forEach(elem => { elem.classList.remove('active') })
+  }
 
 }
 
-
-
-  // var msnry = new Masonry(mainContainer, {
-  //   itemSelector: '.box',
-  //   columnWidth: 200, // Ширина одной колонки (можно указать селектор или процент)
-  //   percentPosition: true, // Чтобы колонки тянулись в процентах
-  //   gutter: 16 // Отступ между блоками
-  // });
-
+for (const elems of btnBack) elems.addEventListener('click', rendercategory)
 
 // -----------------------
 
