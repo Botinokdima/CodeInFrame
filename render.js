@@ -75,6 +75,20 @@ function rendercategory() {
             </div>
          </div>`)
 
+
+       
+          // var iso = new Isotope(mainContainer, {
+          //     // options
+          //     itemSelector: '.box',
+          //     fitWidth: true
+          //    // layoutMode: 'fitRows'
+          //   });
+         
+            
+
+            console.log(document.querySelectorAll('.box'));
+
+
             for (let i = 0; i < mainChildren.length; i++) {
 
               strPath = obj.path + '/' + folder[1] + '/' + obj[this.getAttribute('data-category')][i]

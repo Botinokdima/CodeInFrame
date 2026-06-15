@@ -17,7 +17,7 @@ let objJS = {
   'Аудио-Видео/Audio-Video': ['article.png https://clck.ru/3TmyqJ'],
   'Атрибуты-тега-script/Atributy-tega-script': ['1.jpg https://clck.ru/3Tmyra', '2.jpeg https://'],
   'Локальное-хранилище/Lokalnoe-hranilishe': ['1.png https://'],
-  'Консоль/Konsol': ['article.png https://clck.ru/3Tmysr'],
+  'Консоль/Konsol': ['article.png https://clck.ru/3Tmysr', '1.webp https://'],
   'Разное/Raznoe': ['article.png https://clck.ru/3TmzFQ', '1.png https://overapi.com/', '2.png https://clck.ru/3Tmzrz', '3.png https://htmlcheatsheet.com/js/'],
   'path': ['JS']
 }
