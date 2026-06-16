@@ -14,7 +14,7 @@ let objJS = {
   'Создание-элемента/Sozdanie-elementa': ['1.jpeg https://', '2.png https://'],
   'Таймеры/Tajmery': ['1.webp https://'],
   'Дата/Data': ['1.jpg https://zalki-lab.ru/'],
-  'Аудио-Видео/Audio-Video': ['article.png https://clck.ru/3TmyqJ'],
+  'Аудио-Видео/Audio-Video': ['article.png https://clck.ru/3TmyqJ', '1.webp https://'],
   'Атрибуты-тега-script/Atributy-tega-script': ['1.jpg https://clck.ru/3Tmyra', '2.jpeg https://'],
   'Локальное-хранилище/Lokalnoe-hranilishe': ['1.png https://'],
   'Консоль/Konsol': ['article.png https://clck.ru/3Tmysr', '1.webp https://'],

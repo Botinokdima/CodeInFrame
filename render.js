@@ -86,7 +86,7 @@ function renderCategory() {
 
 
 
-            console.log(document.querySelectorAll('.box'));
+            //console.log(document.querySelectorAll('.box'));
             document.querySelectorAll('.box').forEach(elems => elems.addEventListener('dragstart', e => e.preventDefault()))
 
             for (let i = 0; i < mainChildren.length; i++) {
