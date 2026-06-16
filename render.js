@@ -36,14 +36,14 @@ for (const category of content) {
       obj = objCSS
     }
 
-    rendercategory()
+    renderCategory()
 
   })
 
 }
 
 
-function rendercategory() {
+function renderCategory() {
   if (step == 1) {
     step++
     mainContainer.innerHTML = ''
@@ -76,18 +76,18 @@ function rendercategory() {
          </div>`)
 
 
-       
-          // var iso = new Isotope(mainContainer, {
-          //     // options
-          //     itemSelector: '.box',
-          //     fitWidth: true
-          //    // layoutMode: 'fitRows'
-          //   });
-         
-            
+
+            // var iso = new Isotope(mainContainer, {
+            //     // options
+            //     itemSelector: '.box',
+            //     fitWidth: true
+            //    // layoutMode: 'fitRows'
+            //   });
+
+
 
             console.log(document.querySelectorAll('.box'));
-
+            document.querySelectorAll('.box').forEach(elems => elems.addEventListener('dragstart', e => e.preventDefault()))
 
             for (let i = 0; i < mainChildren.length; i++) {
 
@@ -166,7 +166,7 @@ function rendercategory() {
 
 }
 
-for (const elems of btnBack) elems.addEventListener('click', rendercategory)
+for (const elems of btnBack) elems.addEventListener('click', renderCategory)
 
 // -----------------------
 

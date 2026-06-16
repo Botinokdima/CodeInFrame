@@ -1,11 +1,3 @@
-/* @font-face {
-    font-family: "MyFont";
-    src: url('MYFONT/Sjz.otf') format("truetype");
-    font-style: normal;
-    font-weight: normal;
-    font-display: swap;
-} */
-
 @font-face {
     font-family: 'MyFont';
     src: url('MYFONT/Sol-Kol.woff2') format('woff2'),
