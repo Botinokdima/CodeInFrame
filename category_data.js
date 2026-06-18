@@ -29,7 +29,7 @@ let objHTML = {
 }
 
 let objCSS = {
-  'Flex/Flex': ['1.jpg https://clck.ru/3UCs5z', 'article.png https://clck.ru/3Tmyte'],
+  'Flex/Flex': ['1.jpg https://clck.ru/3UCs5z', 'article.png https://clck.ru/3Tmyte', '2.webp https://'],
   'Grid/Grid': ['1.png https://clck.ru/3UCs7F', '2.jpeg https://'],
   'Background/Background': ['1.png https://clck.ru/3UCs8L', '2.jpeg https://',],
   'Font/Font': ['1.webp https://'],
