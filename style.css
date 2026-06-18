@@ -103,6 +103,10 @@ body {
     background: url(block_bookmarks.webp) center/cover;
 }
 
+#online_generator {
+    background: url(online_1.webp) center/cover;
+}
+
 .menu_block {
     width: 200px;
     height: 200px;
@@ -283,14 +287,18 @@ img {
 @media screen and (min-width: 480px) and (max-width: 1100px) {
     #nav_container {
         flex-direction: row;
-        height: 100vh;
+    height: 100vh;
         flex-wrap: wrap;
         align-content: center;
     }
 
+
+    #start_bookmarks_block{
+        flex-grow: 2;
+    }
+
     .content {
-        width: 40%;
-        height: 40%;
+        flex-grow: 1;
     }
 }
 

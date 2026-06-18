@@ -43,7 +43,12 @@ let objCSS = {
   'Scroll-bar/Scroll-bar': ['1.jpeg https://'],
   'Media-CSS/Media-CSS': ['1.png https://'],
   'Справочник/Spravochnik': ['article.png https://clck.ru/3Tn2Nv'],
-  'Online-Generator-Css/Online-Generator-Css': ['1.webp https://webcode.tools/', '2.webp https://active-vision.ru/box-shadow/'],
   'path': ['CSS']
+}
+
+let objONLINE = {
+  'Code_Generators/Code_Generators': ['1.webp https://webcode.tools/'],
+  'Box_Shadow_online/Box_Shadow_online': ['1.webp https://active-vision.ru/box-shadow/'],
+  'path': ['ONLINE']
 }
 

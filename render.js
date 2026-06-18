@@ -35,6 +35,9 @@ for (const category of content) {
     else if (category.dataset.category == 'CSS') {
       obj = objCSS
     }
+    else if (category.dataset.category == 'ONLINE') {
+      obj = objONLINE
+    }
 
     renderCategory()
 
