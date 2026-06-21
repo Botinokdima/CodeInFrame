@@ -268,7 +268,7 @@ function saveBookmarks(arr) {
 function scrollImg(elems, e) {
   e.preventDefault();
   let style = getComputedStyle(elems).width;
-  e.deltaY > 0 ? elems.style.width = parseInt(style) - 20 + 'px' : elems.style.width = parseInt(style) + 20 + 'px'
+  e.deltaY > 0 ? elems.style.width = parseInt(style) - 25 + 'px' : elems.style.width = parseInt(style) + 25 + 'px'
 }
 
 
@@ -281,7 +281,7 @@ function positionImg(elems) {
     elems.style.cursor = '';
   })
 
-  elems.addEventListener('mousemove', function func(e) {
-    translateTransform ? elems.style.transform = `translateY(${e.clientY - document.documentElement.clientHeight / 2}px)` : null
+  elems.addEventListener('mousemove', function (e) {
+      translateTransform ? elems.style.transform = `translateY(${e.clientY - document.documentElement.clientHeight / 2}px)` : null
   })
 }
