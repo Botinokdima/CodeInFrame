@@ -37,6 +37,9 @@ body {
     min-height: 100vh;
     z-index: 1;
     display: none;
+    /* border-right: 1px solid gold; */
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 
 .back:hover {
