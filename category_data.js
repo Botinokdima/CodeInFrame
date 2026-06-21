@@ -6,7 +6,7 @@ let objJS = {
   'Числа/Chisla': ['1.png https://', '2.png https://', '3.png https://', '4.png https://', '5.png https://', '6.png https://', '7.png https://', '8.png https://', '9.png https://', '10.png https://'],
   'Строки/Stroki': ['1.jpg https://', '2.jpeg https://'],
   'События/Sobytiya': ['1.png https://', '2.png https://', '3.png https://', '4.png https://', '5.png https://', '6.png https://', '7.png https://', '8.png https://', '9.png https://', '10.png https://', '11.png https://',
-    '12.png https://', '13.webp https://'
+    '12.png https://', '13.webp https://', '14.webp https://clck.ru/3UHB9t'
   ],
   'Функции/Funkcii': ['1.webp https://'],
   'AddEventListener()/AddEventListener()': ['1.webp https://', 'article.webp https://clck.ru/3U8ZpM'],
@@ -28,6 +28,7 @@ let objJS = {
 let objHTML = {
   'Input/Input': ['1.webp https://', '2.webp https://', '3.webp https://'],
   'Emmet/Emmet': ['1.webp https://', 'article.webp https://clck.ru/3Tn2Do', '2.webp https://',],
+  'Справочник/Spravochnik': ['1.webp https://webref.ru/html'],
   'path': ['HTML']
 }
 
@@ -46,6 +47,7 @@ let objCSS = {
   'Scroll-bar/Scroll-bar': ['1.jpeg https://'],
   'Media-CSS/Media-CSS': ['1.png https://'],
   'Справочник/Spravochnik': ['article.png https://clck.ru/3Tn2Nv'],
+  'Разное/Raznoe': ['article.webp https://habr.com/ru/articles/1026574/','article.webp https://clck.ru/3UHBDW'],
   'path': ['CSS']
 }
 
