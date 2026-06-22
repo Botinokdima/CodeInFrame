@@ -4,7 +4,7 @@ let objJS = {
     '11.jpg https://clck.ru/3Tm2T7', '12.jpg https://clck.ru/3Tm2Zy', '13.png https://', '14.png https://'
   ],
   'Числа/Chisla': ['1.png https://', '2.png https://', '3.png https://', '4.png https://', '5.png https://', '6.png https://', '7.png https://', '8.png https://', '9.png https://', '10.png https://'],
-  'Строки/Stroki': ['1.jpg https://', '2.jpeg https://'],
+  'Строки/Stroki': ['1.jpg https://', '2.jpeg https://', '3.webp https://'],
   'События/Sobytiya': ['1.png https://', '2.png https://', '3.png https://', '4.png https://', '5.png https://', '6.png https://', '7.png https://', '8.png https://', '9.png https://', '10.png https://', '11.png https://',
     '12.png https://', '13.webp https://', '14.webp https://clck.ru/3UHB9t'
   ],
@@ -47,7 +47,7 @@ let objCSS = {
   'Scroll-bar/Scroll-bar': ['1.jpeg https://'],
   'Media-CSS/Media-CSS': ['1.png https://'],
   'Справочник/Spravochnik': ['article.png https://clck.ru/3Tn2Nv'],
-  'Разное/Raznoe': ['article.webp https://habr.com/ru/articles/1026574/','article.webp https://clck.ru/3UHBDW'],
+  'Разное/Raznoe': ['article.webp https://habr.com/ru/articles/1026574/', 'article.webp https://clck.ru/3UHBDW'],
   'path': ['CSS']
 }
 
