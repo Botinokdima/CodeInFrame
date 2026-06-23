@@ -14,6 +14,7 @@ let objJS = {
   'Создание-элемента/Sozdanie-elementa': ['1.jpeg https://', '2.png https://'],
   'Метрики-элементов/Metriki-elementov': ['1.webp https://learn.javascript.ru/size-and-scroll', '2.webp https://'],
   'Метрики-окна/Metriki-okna': ['1.webp https://', '2.webp https://'],
+  'ClassList/ClassList': ['1.webp https://'],
   'Стилизация/Stilizaciya': ['1.webp https://', '2.webp https://'],
   'Таймеры/Tajmery': ['1.webp https://'],
   'Дата/Data': ['1.jpg https://zalki-lab.ru/'],
