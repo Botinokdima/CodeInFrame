@@ -282,6 +282,6 @@ function positionImg(elems) {
   })
 
   elems.addEventListener('mousemove', function (e) {
-      translateTransform ? elems.style.transform = `translateY(${e.clientY - document.documentElement.clientHeight / 2}px)` : null
+    translateTransform ? elems.style.transform = `translateY(${e.clientY - document.documentElement.clientHeight / 2}px)` : null
   })
 }
