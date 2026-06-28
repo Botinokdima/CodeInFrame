@@ -48,7 +48,7 @@ let objCSS = {
   'Shape-Outside/Shape-Outside': ['1.jpeg https://'],
   'Animation-Transition/Animation-Transition': ['1.png https://', '2.jpg https://'],
   'Scroll-bar/Scroll-bar': ['1.jpeg https://'],
-  'Media-CSS/Media-CSS': ['1.png https://'],
+  'Media-CSS/Media-CSS': ['1.webp https://', '2.webp https://'],
   'Справочник/Spravochnik': ['article.png https://clck.ru/3Tn2Nv'],
   'Разное/Raznoe': ['article.webp https://habr.com/ru/articles/1026574/', 'article.webp https://clck.ru/3UHBDW'],
   'path': ['CSS']

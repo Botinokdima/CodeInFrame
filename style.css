@@ -281,7 +281,7 @@ img {
     }
 
     .imgOver {
-        width: 100%;
+        width: 80%;
     }
 
     #nav_container.active {
@@ -305,6 +305,16 @@ img {
 
     .content {
         flex-grow: 1;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 1024px) {
+    .box {
+        width: 80%;
+    }
+
+    .imgOver {
+        width: 90%;
     }
 }
 
