@@ -209,7 +209,7 @@ startBookmarksBlock.addEventListener('click', function () {
       if (res[1].length > 8) {
         link = createElems('a', box, '', 'addLink');
         link.target = '_blank';
-        link.title = 'переход по ссылке';
+        link.title = `переход по ссылке ${res[1]}`;
         link.href = res[1];
         link.addEventListener('click', e => e.stopPropagation());
       }
