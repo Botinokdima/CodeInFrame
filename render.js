@@ -5,15 +5,15 @@ let btnBack = document.querySelectorAll('.back');
 let navContainer = document.querySelector('#nav_container');
 let startBookmarksBlock = document.querySelector('#start_bookmarks_block');
 let content = document.querySelectorAll('.content');
-let menuBlock = document.querySelectorAll('.menu_block')
+let menuBlock = document.querySelectorAll('.menu_block');
 
 
 let step = 1;
 let obj = null;
 let strPath;
 let mainChildren = mainContainer.children;
-let arrBOOKMARKS
-let translateTransform = false
+let arrBOOKMARKS;
+let translateTransform = false;
 localStorage.getItem('bookmarks') != null ? arrBOOKMARKS = JSON.parse(localStorage.getItem('bookmarks')) : arrBOOKMARKS = [];
 
 
@@ -39,7 +39,7 @@ for (const category of content) {
       obj = objONLINE
     }
 
-    renderCategory()
+    renderCategory();
 
   })
 
@@ -48,25 +48,25 @@ for (const category of content) {
 
 function renderCategory() {
   if (step == 1) {
-    step++
-    mainContainer.innerHTML = ''
-    navContainer.classList.add('active')
-    btnBack.forEach(elem => { elem.classList.add('active') })
+    step++;
+    mainContainer.innerHTML = '';
+    navContainer.classList.add('active');
+    btnBack.forEach(elem => { elem.classList.add('active') });
 
     for (const key in obj) {
 
-      let folder = key.split('/')
+      let folder = key.split('/');
 
       if (key != 'path') {
         let menuBox = createElems('div', mainContainer, folder[0], 'menu_block', key);
 
         menuBox.addEventListener('click', function () {
-          step = 1
-          mainContainer.innerHTML = ''
+          step = 1;
+          mainContainer.innerHTML = '';
 
           for (const elems of obj[this.getAttribute('data-category')]) {
 
-            let res = elems.split(' ')
+            let res = elems.split(' ');
 
             mainContainer.insertAdjacentHTML('beforeEnd', `<div class="box">
          <div class="head_munu">
