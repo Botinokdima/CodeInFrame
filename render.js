@@ -71,7 +71,7 @@ function renderCategory() {
             mainContainer.insertAdjacentHTML('beforeEnd', `<div class="box">
          <div class="head_munu">
             <span class="btn_head btn_add_save" title="добавить в избранное"></span>
-            <a href="${res[1]}" target="_blank" title="переход по ссылке" class="btn_head btn_go_site"></a>
+            ${res[1].length > 8 ? `<a href="${res[1]}" target="_blank" title="переход по ссылке ${res[1]}" class="btn_head btn_go_site"></a>` : ``}
          </div>
             <div class="box_img">   
             <img src="${obj.path + '/' + folder[1] + '/' + res[0]}" alt="">
@@ -186,50 +186,57 @@ startBookmarksBlock.addEventListener('click', function () {
 
     box.addEventListener('click', function (e) {
 
-      let over = createElems('div', document.body, '', 'over')
+      let over = createElems('div', document.body, '', 'over');
 
-      over.addEventListener('click', () => over.remove())
+      over.addEventListener('click', () => over.remove());
 
-      let imgOver = createElems('img', over, '', 'imgOver')
-      imgOver.src = e.target.src
-      imgOver.loading = 'lazy'
+      let imgOver = createElems('img', over, '', 'imgOver');
+      imgOver.src = e.target.src;
+      imgOver.loading = 'lazy';
 
-      imgOver.addEventListener('wheel', e => scrollImg(imgOver, e))
-      imgOver.addEventListener('click', e => e.stopPropagation())
-      imgOver.addEventListener('dragstart', e => e.preventDefault())
-      imgOver.addEventListener('mousedown', e => positionImg(imgOver))
+      imgOver.addEventListener('wheel', e => scrollImg(imgOver, e));
+      imgOver.addEventListener('click', e => e.stopPropagation());
+      imgOver.addEventListener('dragstart', e => e.preventDefault());
+      imgOver.addEventListener('mousedown', e => positionImg(imgOver));
     })
 
-    box.addEventListener('mouseenter', function (e) {
 
-      e.stopPropagation()
-      let link = createElems('a', box, '', 'addLink')
-      link.target = '_blank';
-      link.title = 'переход по ссылке';
-      link.href = res[1]
+
+    box.addEventListener('mouseenter', function (e) {
+      let link;
+      e.stopPropagation();
+
+      if (res[1].length > 8) {
+        link = createElems('a', box, '', 'addLink');
+        link.target = '_blank';
+        link.title = 'переход по ссылке';
+        link.href = res[1];
+        link.addEventListener('click', e => e.stopPropagation());
+      }
+
 
       let del = createElems('div', box, '', 'delElems')
-      del.title = 'удалить'
-      link.addEventListener('click', e => e.stopPropagation())
+      del.title = 'удалить';
+
 
       del.addEventListener('click', function (e) {
-        e.stopPropagation()
+        e.stopPropagation();
 
-        del.closest('.box').remove()
+        del.closest('.box').remove();
 
         for (let i = 0; i < arrBOOKMARKS.length; i++) {
 
           if (arrBOOKMARKS[i].startsWith(res[0])) {
             arrBOOKMARKS.splice(i, 1);
-            saveBookmarks(arrBOOKMARKS)
+            saveBookmarks(arrBOOKMARKS);
           }
 
         }
       })
 
       box.addEventListener('mouseleave', function (e) {
-        link.remove()
-        del.remove()
+        if (link) link.remove();
+        del.remove();
       })
 
     })

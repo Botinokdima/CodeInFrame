@@ -234,11 +234,11 @@ img {
 
 .addLink,
 .delElems {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     position: absolute;
-    bottom: 10px;
-    left: calc(50% - 55px);
+    right: 55px;
+    top: 10px;
 }
 
 .addLink {
@@ -250,8 +250,7 @@ img {
 }
 
 .delElems {
-    left: auto;
-    right: calc(50% - 55px);
+    right: 10px;
     background: url(delete.png) no-repeat center/cover;
 }
 

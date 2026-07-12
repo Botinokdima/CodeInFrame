@@ -1,6 +1,6 @@
 // ==================== ДАННЫЕ КАТЕГОРИЙ ====================
 let objJS = {
-  'Массивы/Massivy': ['1.png https://', '2.png https://', '3.png https://', '4.png https://', '5.png https://', '6.png https:///', '7.png https://', '8.png https://', '9.png https://', '10.jpg https://clck.ru/3Tmymc',
+  'Массивы/Massivy': ['1.png https://', '2.png https://', '3.png https://', '4.png https://', '5.png https://', '6.png https://', '7.png https://', '8.png https://', '9.png https://', '10.jpg https://clck.ru/3Tmymc',
     '11.jpg https://clck.ru/3Tm2T7', '12.jpg https://clck.ru/3Tm2Zy', '13.png https://', '14.png https://'
   ],
   'Объекты/Obekty': ['1.webp https://clck.ru/3UUbQD', '2.webp https://metanit.com/web/javascript/4.1.php', '3.webp https://', '4.webp https://'],
