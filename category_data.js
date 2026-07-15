@@ -13,6 +13,7 @@ let objJS = {
   'Функции/Funkcii': ['1.webp https://'],
   'AddEventListener()/AddEventListener()': ['1.webp https://', 'article.webp https://clck.ru/3U8ZpM'],
   'Деструктуризация/Destrukturizaciya': ['1.jpeg https://'],
+  'Set/Set': ['1.webp https://doka.guide/js/set/','2.webp https://'],
   'Создание-элемента/Sozdanie-elementa': ['1.jpeg https://', '2.png https://'],
   'Метрики-элементов/Metriki-elementov': ['1.webp https://learn.javascript.ru/size-and-scroll', '2.webp https://'],
   'Метрики-окна/Metriki-okna': ['1.webp https://', '2.webp https://'],
