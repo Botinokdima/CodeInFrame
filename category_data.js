@@ -1,7 +1,7 @@
 // ==================== ДАННЫЕ КАТЕГОРИЙ ====================
 let objJS = {
   'Массивы/Massivy': ['1.png https://', '2.png https://', '3.png https://', '4.png https://', '5.png https://', '6.png https://', '7.png https://', '8.png https://', '9.png https://', '10.jpg https://clck.ru/3Tmymc',
-    '11.jpg https://clck.ru/3Tm2T7', '12.jpg https://clck.ru/3Tm2Zy', '13.png https://', '14.png https://'
+    '11.jpg https://clck.ru/3Tm2T7', '12.jpg https://clck.ru/3Tm2Zy', '13.png https://', '14.png https://', '15.webp https://clck.ru/3UqR2Q'
   ],
   'Объекты/Obekty': ['1.webp https://clck.ru/3UUbQD', '2.webp https://metanit.com/web/javascript/4.1.php', '3.webp https://', '4.webp https://'],
   'Числа/Chisla': ['1.png https://', '2.png https://', '3.png https://', '4.png https://', '5.png https://', '6.png https://', '7.png https://', '8.png https://', '9.png https://', '10.png https://'],
@@ -43,6 +43,7 @@ let objCSS = {
   'Flex/Flex': ['1.jpg https://clck.ru/3UCs5z', 'article.png https://clck.ru/3Tmyte', '2.webp https://'],
   'Grid/Grid': ['1.png https://clck.ru/3UCs7F', '2.jpeg https://'],
   'Background/Background': ['1.png https://clck.ru/3UCs8L', '2.jpeg https://',],
+  'Radial-Gradient/Radial-Gradient': ['1.webp https://clck.ru/3UqRbn'],
   'Font/Font': ['1.webp https://'],
   'Border/Border': ['1.webp https://'],
   'Columns/Columns': ['1.webp https://', 'article.webp https://habr.com/ru/articles/469395/'],
@@ -52,6 +53,7 @@ let objCSS = {
   'Shape-Outside/Shape-Outside': ['1.jpeg https://'],
   'Animation-Transition/Animation-Transition': ['1.png https://', '2.jpg https://'],
   'Scroll-bar/Scroll-bar': ['1.jpeg https://'],
+  'Scroll-Snap/Scroll-Snap': ['1.webp https://habr.com/ru/articles/498456/'],
   'Media-CSS/Media-CSS': ['1.webp https://', '2.webp https://', '3.webp https://habr.com/ru/companies/ruvds/articles/1054454/'],
   'Справочник/Spravochnik': ['article.png https://clck.ru/3Tn2Nv'],
   'Разное/Raznoe': ['article.webp https://habr.com/ru/articles/1026574/', 'article.webp https://clck.ru/3UHBDW'],
