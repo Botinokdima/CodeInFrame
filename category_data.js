@@ -21,7 +21,7 @@ let objJS = {
   'ClassList/ClassList': ['1.webp https://'],
   'Стилизация/Stilizaciya': ['1.webp https://', '2.webp https://'],
   'Таймеры/Tajmery': ['1.webp https://'],
-  'Дата/Data': ['1.jpg https://zalki-lab.ru/'],
+  'Дата/Data': ['1.jpg https://zalki-lab.ru/', '2.webp https://clck.ru/3UrU8T'],
   'Аудио-Видео/Audio-Video': ['article.webp https://clck.ru/3TmyqJ', '1.webp https://'],
   'Атрибуты-тега-script/Atributy-tega-script': ['1.webp https://clck.ru/3Tmyra', '2.webp https://'],
   'Drag_&_Drop/Drag_&_Drop': ['1.webp https://learn.javascript.ru/drag-and-drop', '2.webp https://clck.ru/3Tmzrz', '3.webp https://habr.com/ru/articles/463463/'],
