@@ -115,6 +115,7 @@ body {
     width: 200px;
     height: 200px;
     border: 2px solid beige;
+    border-radius: 10px;
     background: url(munu2.webp) no-repeat center/cover;
     margin: 20px;
     font-size: 45px;
