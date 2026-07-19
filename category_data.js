@@ -57,6 +57,7 @@ let objCSS = {
   'Media-CSS/Media-CSS': ['1.webp https://', '2.webp https://', '3.webp https://habr.com/ru/companies/ruvds/articles/1054454/'],
   'Справочник/Spravochnik': ['article.png https://clck.ru/3Tn2Nv'],
   'Разное/Raznoe': ['article.webp https://habr.com/ru/articles/1026574/', 'article.webp https://clck.ru/3UHBDW'],
+  'Псевдоклассы/Psevdoklassy': ['1.webp https://clck.ru/3UrTiX'],
   'path': ['CSS']
 }
 
