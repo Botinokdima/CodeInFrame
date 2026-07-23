@@ -13,7 +13,6 @@ let obj = null;
 let strPath;
 let mainChildren = mainContainer.children;
 let arrBOOKMARKS;
-let translateTransform = false;
 localStorage.getItem('bookmarks') != null ? arrBOOKMARKS = JSON.parse(localStorage.getItem('bookmarks')) : arrBOOKMARKS = [];
 
 
@@ -136,19 +135,20 @@ function renderCategory() {
 
               if (e.target.tagName == 'IMG') {
 
-                let over = createElems('div', document.body, '', 'over')
+                let over = createElems('div', document.body, '', 'over');
 
-                over.addEventListener('click', () => over.remove())
+                over.addEventListener('click', () => over.remove());
 
-                let imgOver = createElems('img', over, '', 'imgOver')
-                imgOver.src = e.target.src
-                imgOver.loading = 'lazy'
+                let imgOver = createElems('img', over, '', 'imgOver');
+                imgOver.src = e.target.src;
+                imgOver.loading = 'lazy';
 
-                imgOver.addEventListener('wheel', e => scrollImg(imgOver, e))
-                imgOver.addEventListener('click', e => e.stopPropagation())
-                imgOver.addEventListener('dragstart', e => e.preventDefault())
-                imgOver.addEventListener('mousedown', e => positionImg(imgOver))
-
+                imgOver.addEventListener('wheel', e => scrollImg(imgOver, e));
+                imgOver.addEventListener('drag', e => positionImg(e));
+                imgOver.addEventListener('dragend', e => imgOver.style.position = '');
+                imgOver.addEventListener('click', e => e.stopPropagation());
+                imgOver.addEventListener('dragover', e => e.preventDefault());
+                imgOver.addEventListener('dragstart', e => e.dataTransfer.setDragImage(e.target, 100000, 100000));
               }
 
             })
@@ -161,10 +161,10 @@ function renderCategory() {
   }
 
   else if (step == 2) {
-    step = 1
-    mainContainer.innerHTML = ''
-    navContainer.classList.remove('active')
-    btnBack.forEach(elem => { elem.classList.remove('active') })
+    step = 1;
+    mainContainer.innerHTML = '';
+    navContainer.classList.remove('active');
+    btnBack.forEach(elem => elem.classList.remove('active'));
   }
 
 }
@@ -175,14 +175,14 @@ for (const elems of btnBack) elems.addEventListener('click', renderCategory)
 
 startBookmarksBlock.addEventListener('click', function () {
 
-  mainContainer.innerHTML = ''
+  mainContainer.innerHTML = '';
 
   for (const elems of arrBOOKMARKS) {
 
-    let res = elems.split(' ')
-    let box = createElems('div', mainContainer, '', 'box')
-    let img = createElems('img', box)
-    img.src = res[0]
+    let res = elems.split(' ');
+    let box = createElems('div', mainContainer, '', 'box');
+    let img = createElems('img', box);
+    img.src = res[0];
 
     box.addEventListener('click', function (e) {
 
@@ -196,8 +196,10 @@ startBookmarksBlock.addEventListener('click', function () {
 
       imgOver.addEventListener('wheel', e => scrollImg(imgOver, e));
       imgOver.addEventListener('click', e => e.stopPropagation());
-      imgOver.addEventListener('dragstart', e => e.preventDefault());
-      imgOver.addEventListener('mousedown', e => positionImg(imgOver));
+      imgOver.addEventListener('drag', e => positionImg(e));
+      imgOver.addEventListener('dragend', e => imgOver.style.position = '');
+      imgOver.addEventListener('dragover', e => e.preventDefault());
+      imgOver.addEventListener('dragstart', e => e.dataTransfer.setDragImage(e.target, 100000, 100000));
     })
 
 
@@ -278,17 +280,11 @@ function scrollImg(elems, e) {
   e.deltaY > 0 ? elems.style.width = parseInt(style) - 25 + 'px' : elems.style.width = parseInt(style) + 25 + 'px'
 }
 
+// Drag & Drop
 
-function positionImg(elems) {
-  translateTransform = true
-  elems.style.cursor = 'grabbing'
-  elems.addEventListener('mouseup', function (e) {
-    translateTransform = false
-    elems.style.transform = '';
-    elems.style.cursor = '';
-  })
-
-  elems.addEventListener('mousemove', function (e) {
-    translateTransform ? elems.style.transform = `translateY(${e.clientY - document.documentElement.clientHeight / 2}px)` : null
-  })
+function positionImg(e) {
+  let style = getComputedStyle(e.target);
+  e.target.style.position = 'absolute';
+  e.target.style.top = `${e.clientY - parseInt(style.height) / 2}px`;
+  e.target.style.left = `${e.clientX - parseInt(style.width) / 2}px`;
 }
