@@ -233,6 +233,11 @@ img {
     /* min-height: 100%; */
 }
 
+.box:hover>.addLink,
+.box:hover>.delElems {
+    display: block;
+}
+
 .addLink,
 .delElems {
     width: 35px;
@@ -240,6 +245,7 @@ img {
     position: absolute;
     right: 55px;
     top: 10px;
+    display: none;
 }
 
 .addLink {

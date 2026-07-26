@@ -16,8 +16,6 @@ let arrBOOKMARKS;
 localStorage.getItem('bookmarks') != null ? arrBOOKMARKS = JSON.parse(localStorage.getItem('bookmarks')) : arrBOOKMARKS = [];
 
 
-
-
 /**
  * Рендерит меню категорий
  */
@@ -50,7 +48,7 @@ function renderCategory() {
     step++;
     mainContainer.innerHTML = '';
     navContainer.classList.add('active');
-    btnBack.forEach(elem => { elem.classList.add('active') });
+    btnBack.forEach(elem => elem.classList.add('active'));
 
     for (const key in obj) {
 
@@ -59,7 +57,8 @@ function renderCategory() {
       if (key != 'path') {
         let menuBox = createElems('div', mainContainer, folder[0], 'menu_block', key);
 
-        menuBox.addEventListener('click', function () {
+        menuBox.addEventListener('click', function (e) {
+
           step = 1;
           mainContainer.innerHTML = '';
 
@@ -67,7 +66,7 @@ function renderCategory() {
 
             let res = elems.split(' ');
 
-            mainContainer.insertAdjacentHTML('beforeEnd', `<div class="box">
+            mainContainer.insertAdjacentHTML('beforeEnd', `<div class="box" data-path="${obj.path}/${folder[1]}/${res[0]} ${res[1]}">
          <div class="head_munu">
             <span class="btn_head btn_add_save" title="добавить в избранное"></span>
             ${res[1].length > 8 ? `<a href="${res[1]}" target="_blank" title="переход по ссылке ${res[1]}" class="btn_head btn_go_site"></a>` : ``}
@@ -77,82 +76,15 @@ function renderCategory() {
             </div>
          </div>`)
 
-
-
-            // var iso = new Isotope(mainContainer, {
-            //     // options
-            //     itemSelector: '.box',
-            //     fitWidth: true
-            //    // layoutMode: 'fitRows'
-            //   });
-
-
-
-            //console.log(document.querySelectorAll('.box'));
             document.querySelectorAll('.box').forEach(elems => elems.addEventListener('dragstart', e => e.preventDefault()))
 
-            for (let i = 0; i < mainChildren.length; i++) {
-
-              strPath = obj.path + '/' + folder[1] + '/' + obj[this.getAttribute('data-category')][i]
-
-              for (let j = 0; j < arrBOOKMARKS.length; j++) {
-
-                if (arrBOOKMARKS[j].startsWith(strPath)) {
-                  mainChildren[i].children[0].children[0].classList.add('addBookmarks');
-                }
-
-              }
+            for (const element of mainChildren) {
+              arrBOOKMARKS.filter(e => e == element.dataset.path ? element.children[0].children[0].classList.add('addBookmarks') : '');
             }
           }
 
+          mainContainer.addEventListener('click', HandlingTheButtonClick)
 
-          for (let i = 0; i < mainChildren.length; i++) {
-
-            mainChildren[i].addEventListener('click', e => {
-
-              if (e.target.tagName == 'SPAN') {
-                strPath = obj.path + '/' + folder[1] + '/' + obj[this.getAttribute('data-category')][i]
-
-
-                if (!e.target.classList.contains('addBookmarks')) {
-                  arrBOOKMARKS.push(strPath)
-                  saveBookmarks(arrBOOKMARKS)
-                  e.target.classList.add('addBookmarks')
-
-                } else {
-                  e.target.classList.remove('addBookmarks')
-
-                  for (let j = 0; j < arrBOOKMARKS.length; j++) {
-
-                    if (arrBOOKMARKS[j].startsWith(strPath)) {
-                      arrBOOKMARKS.splice(j, 1);
-                      saveBookmarks(arrBOOKMARKS)
-                    }
-
-                  }
-                }
-              }
-
-              if (e.target.tagName == 'IMG') {
-
-                let over = createElems('div', document.body, '', 'over');
-
-                over.addEventListener('click', () => over.remove());
-
-                let imgOver = createElems('img', over, '', 'imgOver');
-                imgOver.src = e.target.src;
-                imgOver.loading = 'lazy';
-
-                imgOver.addEventListener('wheel', e => scrollImg(imgOver, e));
-                imgOver.addEventListener('drag', e => positionImg(e));
-                imgOver.addEventListener('dragend', e => imgOver.style.position = '');
-                imgOver.addEventListener('click', e => e.stopPropagation());
-                imgOver.addEventListener('dragover', e => e.preventDefault());
-                imgOver.addEventListener('dragstart', e => e.dataTransfer.setDragImage(e.target, 100000, 100000));
-              }
-
-            })
-          }
         })
 
       }
@@ -171,8 +103,8 @@ function renderCategory() {
 
 for (const elems of btnBack) elems.addEventListener('click', renderCategory)
 
-// -----------------------
 
+// Блок закладок
 startBookmarksBlock.addEventListener('click', function () {
 
   mainContainer.innerHTML = '';
@@ -184,6 +116,18 @@ startBookmarksBlock.addEventListener('click', function () {
     let img = createElems('img', box);
     img.src = res[0];
 
+
+    if (res[1].length > 8) {
+      let link = createElems('a', box, '', 'addLink');
+      link.target = '_blank';
+      link.title = `переход по ссылке ${res[1]}`;
+      link.href = res[1];
+      link.addEventListener('click', e => e.stopPropagation());
+    }
+
+    let del = createElems('div', box, '', 'delElems')
+    del.title = 'удалить';
+
     box.addEventListener('click', function (e) {
 
       let over = createElems('div', document.body, '', 'over');
@@ -194,7 +138,7 @@ startBookmarksBlock.addEventListener('click', function () {
       imgOver.src = e.target.src;
       imgOver.loading = 'lazy';
 
-      imgOver.addEventListener('wheel', e => scrollImg(imgOver, e));
+      imgOver.addEventListener('wheel', e => scrollImg(imgOver, e), { passive: true });
       imgOver.addEventListener('click', e => e.stopPropagation());
       imgOver.addEventListener('drag', e => positionImg(e));
       imgOver.addEventListener('dragend', e => imgOver.style.position = '');
@@ -203,43 +147,16 @@ startBookmarksBlock.addEventListener('click', function () {
     })
 
 
-
-    box.addEventListener('mouseenter', function (e) {
-      let link;
+    del.addEventListener('click', function (e) {
       e.stopPropagation();
+      del.closest('.box').remove();
 
-      if (res[1].length > 8) {
-        link = createElems('a', box, '', 'addLink');
-        link.target = '_blank';
-        link.title = `переход по ссылке ${res[1]}`;
-        link.href = res[1];
-        link.addEventListener('click', e => e.stopPropagation());
-      }
-
-
-      let del = createElems('div', box, '', 'delElems')
-      del.title = 'удалить';
-
-
-      del.addEventListener('click', function (e) {
-        e.stopPropagation();
-
-        del.closest('.box').remove();
-
-        for (let i = 0; i < arrBOOKMARKS.length; i++) {
-
-          if (arrBOOKMARKS[i].startsWith(res[0])) {
-            arrBOOKMARKS.splice(i, 1);
-            saveBookmarks(arrBOOKMARKS);
-          }
-
+      for (let i = 0; i < arrBOOKMARKS.length; i++) {
+        if (arrBOOKMARKS[i].startsWith(res[0])) {
+          arrBOOKMARKS.splice(i, 1);
+          saveBookmarks(arrBOOKMARKS);
         }
-      })
-
-      box.addEventListener('mouseleave', function (e) {
-        if (link) link.remove();
-        del.remove();
-      })
+      }
 
     })
 
@@ -247,12 +164,44 @@ startBookmarksBlock.addEventListener('click', function () {
 
 })
 
-
 // ==================== ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ====================
-/**
- * 
- * Создаёт DOM-элемент с параметрами
- */
+
+//Делегирование событий для главного контейнера
+function HandlingTheButtonClick(e) {
+  // Обработка клика по кнопке добавления в закладки
+  if (e.target.tagName == 'SPAN') {
+
+    strPath = e.target.closest('.box').dataset.path;
+
+    if (!e.target.classList.contains('addBookmarks')) {
+      arrBOOKMARKS.push(strPath);
+      e.target.classList.add('addBookmarks');
+    } else {
+      arrBOOKMARKS = arrBOOKMARKS.filter(elem => elem != strPath);
+      e.target.classList.remove('addBookmarks');
+    }
+    saveBookmarks(arrBOOKMARKS)
+  }
+
+  // Обработка клика по изображению для увеличения
+  if (e.target.tagName == 'IMG') {
+    let over = createElems('div', document.body, '', 'over');
+    over.addEventListener('click', () => over.remove());
+    let imgOver = createElems('img', over, '', 'imgOver');
+    imgOver.src = e.target.src;
+    imgOver.loading = 'lazy';
+
+    imgOver.addEventListener('wheel', e => scrollImg(imgOver, e));
+    imgOver.addEventListener('drag', e => positionImg(e));
+    imgOver.addEventListener('dragend', e => imgOver.style.position = '');
+    imgOver.addEventListener('click', e => e.stopPropagation());
+    imgOver.addEventListener('dragover', e => e.preventDefault());
+    imgOver.addEventListener('dragstart', e => e.dataTransfer.setDragImage(e.target, 100000, 100000));
+  }
+
+}
+
+// Создаёт DOM-элемент с параметрами
 function createElems(tag, parent = null, text = '', className = '', dataAttr = null) {
   const elem = document.createElement(tag);
   if (text) elem.textContent = text;
@@ -262,9 +211,7 @@ function createElems(tag, parent = null, text = '', className = '', dataAttr = n
   return elem;
 }
 
-/**
- * Безопасное сохранение закладок в localStorage
- */
+//Безопасное сохранение закладок в localStorage
 function saveBookmarks(arr) {
   try {
     localStorage.setItem('bookmarks', JSON.stringify(arr));
@@ -281,7 +228,6 @@ function scrollImg(elems, e) {
 }
 
 // Drag & Drop
-
 function positionImg(e) {
   let style = getComputedStyle(e.target);
   e.target.style.position = 'absolute';
