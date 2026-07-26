@@ -83,6 +83,7 @@ body {
     border: 1px solid rgb(255, 255, 255);
     /* border: 1px solid gold; */
     margin: 10px;
+    border-radius: 10px;
 }
 
 .content:hover {
