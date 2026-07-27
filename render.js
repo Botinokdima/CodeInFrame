@@ -210,6 +210,7 @@ function addOvelrlay(elem) {
 
 // Drag & Drop
 function drag(e) {
+  this.style.cursor = 'grabbing'
   let positionElem = e => {
     let style = getComputedStyle(e.target);
     e.target.style.position = 'absolute';
@@ -218,9 +219,10 @@ function drag(e) {
   }
 
   this.addEventListener('pointermove', positionElem);
-  this.addEventListener('pointerup', () => this.removeEventListener('pointermove', positionElem));
+  this.addEventListener('pointerup', () => {
+    this.removeEventListener('pointermove', positionElem);
+    this.style.cursor = '';
+  });
 }
-
-
 
 
