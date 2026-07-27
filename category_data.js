@@ -47,6 +47,7 @@ let objCSS = {
   'Font/Font': ['1.webp https://'],
   'Border/Border': ['1.webp https://'],
   'Columns/Columns': ['1.webp https://', 'article.webp https://habr.com/ru/articles/469395/'],
+  'Cursor/Cursor': ['1.webp https://'],
   'Filter/Filter': ['1.png https://'],
   'Text-Stroke/Text-Stroke': ['1.webp https://'],
   'Stroke/Stroke': ['1.webp https://'],

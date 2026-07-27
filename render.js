@@ -212,7 +212,7 @@ function addOvelrlay(elem) {
 function drag(e) {
   this.style.cursor = 'grabbing'
   let positionElem = e => {
-    e.preventDefault()
+    e.preventDefault();
     let style = getComputedStyle(e.target);
     e.target.style.position = 'absolute';
     e.target.style.top = `${e.clientY - parseInt(style.height) / 2}px`;
