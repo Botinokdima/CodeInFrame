@@ -83,7 +83,7 @@ function renderCategory() {
             }
           }
 
-          mainContainer.addEventListener('click', HandlingTheButtonClick)
+          mainContainer.addEventListener('click', HandlingTheButtonClick);
 
         })
 
@@ -115,7 +115,7 @@ startBookmarksBlock.addEventListener('click', function () {
     let box = createElems('div', mainContainer, '', 'box');
     let img = createElems('img', box);
     img.src = res[0];
-
+    img.draggable = false;
 
     if (res[1].length > 8) {
       let link = createElems('a', box, '', 'addLink');
@@ -128,24 +128,7 @@ startBookmarksBlock.addEventListener('click', function () {
     let del = createElems('div', box, '', 'delElems')
     del.title = 'удалить';
 
-    box.addEventListener('click', function (e) {
-
-      let over = createElems('div', document.body, '', 'over');
-
-      over.addEventListener('click', () => over.remove());
-
-      let imgOver = createElems('img', over, '', 'imgOver');
-      imgOver.src = e.target.src;
-      imgOver.loading = 'lazy';
-
-      imgOver.addEventListener('wheel', e => scrollImg(imgOver, e), { passive: true });
-      imgOver.addEventListener('click', e => e.stopPropagation());
-      imgOver.addEventListener('drag', e => positionImg(e));
-      imgOver.addEventListener('dragend', e => imgOver.style.position = '');
-      imgOver.addEventListener('dragover', e => e.preventDefault());
-      imgOver.addEventListener('dragstart', e => e.dataTransfer.setDragImage(e.target, 100000, 100000));
-    })
-
+    box.addEventListener('click', e => addOvelrlay(e.target.src));
 
     del.addEventListener('click', function (e) {
       e.stopPropagation();
@@ -180,25 +163,11 @@ function HandlingTheButtonClick(e) {
       arrBOOKMARKS = arrBOOKMARKS.filter(elem => elem != strPath);
       e.target.classList.remove('addBookmarks');
     }
-    saveBookmarks(arrBOOKMARKS)
+    saveBookmarks(arrBOOKMARKS);
   }
 
   // Обработка клика по изображению для увеличения
-  if (e.target.tagName == 'IMG') {
-    let over = createElems('div', document.body, '', 'over');
-    over.addEventListener('click', () => over.remove());
-    let imgOver = createElems('img', over, '', 'imgOver');
-    imgOver.src = e.target.src;
-    imgOver.loading = 'lazy';
-
-    imgOver.addEventListener('wheel', e => scrollImg(imgOver, e));
-    imgOver.addEventListener('drag', e => positionImg(e));
-    imgOver.addEventListener('dragend', e => imgOver.style.position = '');
-    imgOver.addEventListener('click', e => e.stopPropagation());
-    imgOver.addEventListener('dragover', e => e.preventDefault());
-    imgOver.addEventListener('dragstart', e => e.dataTransfer.setDragImage(e.target, 100000, 100000));
-  }
-
+  if (e.target.tagName == 'IMG') addOvelrlay(e.target.src);
 }
 
 // Создаёт DOM-элемент с параметрами
@@ -211,7 +180,7 @@ function createElems(tag, parent = null, text = '', className = '', dataAttr = n
   return elem;
 }
 
-//Безопасное сохранение закладок в localStorage
+// Безопасное сохранение закладок в localStorage
 function saveBookmarks(arr) {
   try {
     localStorage.setItem('bookmarks', JSON.stringify(arr));
@@ -220,17 +189,38 @@ function saveBookmarks(arr) {
   }
 }
 
-
 function scrollImg(elems, e) {
   e.preventDefault();
   let style = getComputedStyle(elems).width;
-  e.deltaY > 0 ? elems.style.width = parseInt(style) - 25 + 'px' : elems.style.width = parseInt(style) + 25 + 'px'
+  e.deltaY > 0 ? elems.style.width = parseInt(style) - 25 + 'px' : elems.style.width = parseInt(style) + 25 + 'px';
+}
+
+// Оверлей 
+function addOvelrlay(elem) {
+  let over = createElems('div', document.body, '', 'over');
+  over.addEventListener('click', () => over.remove());
+  let imgOver = createElems('img', over, '', 'imgOver');
+  imgOver.src = elem;
+  imgOver.loading = 'lazy';
+  imgOver.draggable = false;
+  imgOver.addEventListener('wheel', e => scrollImg(imgOver, e));
+  imgOver.addEventListener('click', e => e.stopPropagation());
+  imgOver.addEventListener('pointerdown', drag);
 }
 
 // Drag & Drop
-function positionImg(e) {
-  let style = getComputedStyle(e.target);
-  e.target.style.position = 'absolute';
-  e.target.style.top = `${e.clientY - parseInt(style.height) / 2}px`;
-  e.target.style.left = `${e.clientX - parseInt(style.width) / 2}px`;
+function drag(e) {
+  let positionElem = e => {
+    let style = getComputedStyle(e.target);
+    e.target.style.position = 'absolute';
+    e.target.style.top = `${e.clientY - parseInt(style.height) / 2}px`;
+    e.target.style.left = `${e.clientX - parseInt(style.width) / 2}px`;
+  }
+
+  this.addEventListener('pointermove', positionElem);
+  this.addEventListener('pointerup', () => this.removeEventListener('pointermove', positionElem));
 }
+
+
+
+
