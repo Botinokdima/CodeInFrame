@@ -116,7 +116,7 @@ body {
     height: 200px;
     border: 2px solid beige;
     border-radius: 10px;
-    background: url(munu2.webp) no-repeat center/cover;
+    background: url(menu.webp) no-repeat center/cover;
     margin: 20px;
     font-size: 45px;
     color: orange;
@@ -217,7 +217,8 @@ img {
     position: fixed;
     left: 0;
     top: 0;
-    display: flex;
+    /* display: flex; */
+    display: none;
     justify-content: center;
     align-items: center;
     cursor: zoom-out;

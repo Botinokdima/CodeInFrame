@@ -6,6 +6,9 @@ let navContainer = document.querySelector('#nav_container');
 let startBookmarksBlock = document.querySelector('#start_bookmarks_block');
 let content = document.querySelectorAll('.content');
 let menuBlock = document.querySelectorAll('.menu_block');
+let img = document.querySelectorAll('img');
+let over = document.querySelector('.over');
+let imgOver = document.querySelector('.imgOver');
 
 
 let step = 1;
@@ -16,32 +19,18 @@ let arrBOOKMARKS;
 localStorage.getItem('bookmarks') != null ? arrBOOKMARKS = JSON.parse(localStorage.getItem('bookmarks')) : arrBOOKMARKS = [];
 
 
-/**
- * Рендерит меню категорий
- */
+ //Рендерит меню категорий
 for (const category of content) {
-
   category.addEventListener('click', function () {
 
-    if (category.dataset.category == 'JS') {
-      obj = objJS
-    }
-    else if (category.dataset.category == 'HTML') {
-      obj = objHTML
-    }
-    else if (category.dataset.category == 'CSS') {
-      obj = objCSS
-    }
-    else if (category.dataset.category == 'ONLINE') {
-      obj = objONLINE
-    }
+    if (category.dataset.category == 'JS') obj = objJS;
+    else if (category.dataset.category == 'HTML') obj = objHTML;
+    else if (category.dataset.category == 'CSS') obj = objCSS;
+    else if (category.dataset.category == 'ONLINE') obj = objONLINE;
 
     renderCategory();
-
   })
-
 }
-
 
 function renderCategory() {
   if (step == 1) {
@@ -101,16 +90,13 @@ function renderCategory() {
 
 }
 
-for (const elems of btnBack) elems.addEventListener('click', renderCategory)
-
+for (const elems of btnBack) elems.addEventListener('click', renderCategory);
 
 // Блок закладок
 startBookmarksBlock.addEventListener('click', function () {
-
   mainContainer.innerHTML = '';
 
   for (const elems of arrBOOKMARKS) {
-
     let res = elems.split(' ');
     let box = createElems('div', mainContainer, '', 'box');
     let img = createElems('img', box);
@@ -125,10 +111,8 @@ startBookmarksBlock.addEventListener('click', function () {
       link.addEventListener('click', e => e.stopPropagation());
     }
 
-    let del = createElems('div', box, '', 'delElems')
+    let del = createElems('div', box, '', 'delElems');
     del.title = 'удалить';
-
-    box.addEventListener('click', e => addOvelrlay(e.target.src));
 
     del.addEventListener('click', function (e) {
       e.stopPropagation();
@@ -165,9 +149,10 @@ function HandlingTheButtonClick(e) {
     }
     saveBookmarks(arrBOOKMARKS);
   }
-
   // Обработка клика по изображению для увеличения
   if (e.target.tagName == 'IMG') addOvelrlay(e.target.src);
+
+  return;
 }
 
 // Создаёт DOM-элемент с параметрами
@@ -197,16 +182,17 @@ function scrollImg(elems, e) {
 
 // Оверлей 
 function addOvelrlay(elem) {
-  let over = createElems('div', document.body, '', 'over');
-  over.addEventListener('click', () => over.remove());
-  let imgOver = createElems('img', over, '', 'imgOver');
+  over.style.display = 'flex'
   imgOver.src = elem;
-  imgOver.loading = 'lazy';
-  imgOver.draggable = false;
   imgOver.addEventListener('wheel', e => scrollImg(imgOver, e));
   imgOver.addEventListener('click', e => e.stopPropagation());
   imgOver.addEventListener('pointerdown', drag);
 }
+
+over.addEventListener('click', () => {
+  over.style.display = 'none';
+  imgOver.style.position = '';
+});
 
 // Drag & Drop
 function drag(e) {
