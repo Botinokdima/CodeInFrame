@@ -72,7 +72,7 @@ function renderCategory() {
             }
           }
 
-          mainContainer.addEventListener('click', HandlingTheButtonClick);
+          // mainContainer.addEventListener('click', HandlingTheButtonClick);
 
         })
 
@@ -132,7 +132,7 @@ startBookmarksBlock.addEventListener('click', function () {
 })
 
 // ==================== ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ====================
-
+mainContainer.addEventListener('click', HandlingTheButtonClick);
 //Делегирование событий для главного контейнера
 function HandlingTheButtonClick(e) {
   // Обработка клика по кнопке добавления в закладки
