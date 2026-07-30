@@ -79,16 +79,14 @@ body {
     width: 300px;
     height: 300px;
     cursor: pointer;
-    border: 1px solid rgb(255, 255, 255);
-    /* border: 1px solid gold; */
+    outline: 1px solid rgb(255, 255, 255);
     margin: 10px;
     border-radius: 10px;
 }
 
 .content:hover {
     box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 14px -21px 0px 10px rgba(0, 0, 0, 0);
-    /* border: 5px solid gold; */
-    border: 5px solid #fff;
+    outline: 5px solid #fff;
 }
 
 #start_js_block {
