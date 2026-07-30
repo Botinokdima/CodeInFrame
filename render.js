@@ -19,7 +19,7 @@ let arrBOOKMARKS;
 localStorage.getItem('bookmarks') != null ? arrBOOKMARKS = JSON.parse(localStorage.getItem('bookmarks')) : arrBOOKMARKS = [];
 
 
- //Рендерит меню категорий
+//Рендерит меню категорий
 for (const category of content) {
   category.addEventListener('click', function () {
 
@@ -149,9 +149,6 @@ function HandlingTheButtonClick(e) {
     }
     saveBookmarks(arrBOOKMARKS);
   }
-  // Обработка клика по изображению для увеличения
-  if (e.target.tagName == 'IMG') addOvelrlay(e.target.src);
-
   return;
 }
 
@@ -174,24 +171,29 @@ function saveBookmarks(arr) {
   }
 }
 
+// Обработка клика по изображению для увеличения
+mainContainer.addEventListener('click', e => e.target.tagName == 'IMG' ? addOvelrlay(e.target.src) : null);
+
 function scrollImg(elems, e) {
   e.preventDefault();
   let style = getComputedStyle(elems).width;
-  e.deltaY > 0 ? elems.style.width = parseInt(style) - 25 + 'px' : elems.style.width = parseInt(style) + 25 + 'px';
+  e.deltaY > 0 && parseInt(style) > 300 ? elems.style.width = parseInt(style) - 25 + 'px' : elems.style.width = parseInt(style) + 25 + 'px';
 }
 
 // Оверлей 
 function addOvelrlay(elem) {
-  over.style.display = 'flex'
+  over.style.display = 'flex';
   imgOver.src = elem;
-  imgOver.addEventListener('wheel', e => scrollImg(imgOver, e));
-  imgOver.addEventListener('click', e => e.stopPropagation());
-  imgOver.addEventListener('pointerdown', drag);
 }
+
+imgOver.addEventListener('wheel', e => scrollImg(imgOver, e));
+imgOver.addEventListener('click', e => e.stopPropagation());
+imgOver.addEventListener('pointerdown', drag);
 
 over.addEventListener('click', () => {
   over.style.display = 'none';
   imgOver.style.position = '';
+  imgOver.style.width = '';
 });
 
 // Drag & Drop
@@ -211,5 +213,3 @@ function drag(e) {
     this.style.cursor = '';
   });
 }
-
-
