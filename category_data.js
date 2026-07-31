@@ -14,9 +14,11 @@ let objJS = {
   'AddEventListener()/AddEventListener()': ['1.webp https://', 'article.webp https://clck.ru/3U8ZpM'],
   'Деструктуризация/Destrukturizaciya': ['1.jpeg https://'],
   'Set/Set': ['1.webp https://doka.guide/js/set/', '2.webp https://'],
+  'Map/Map': ['1.webp https://doka.guide/js/array-map/'],
   'Создание-элемента/Sozdanie-elementa': ['1.jpeg https://', '2.png https://'],
   'Метрики-элементов/Metriki-elementov': ['1.webp https://learn.javascript.ru/size-and-scroll', '2.webp https://'],
   'Метрики-окна/Metriki-okna': ['1.webp https://', '2.webp https://'],
+  'GetBoundingClientRect()/GetBoundingClientRect()': ['1.webp https://clck.ru/3V3vGU'],
   'Атрибуты/Atributy': ['1.webp https://'],
   'ClassList/ClassList': ['1.webp https://'],
   'Стилизация/Stilizaciya': ['1.webp https://', '2.webp https://'],
@@ -40,8 +42,8 @@ let objHTML = {
 }
 
 let objCSS = {
-  'Flex/Flex': ['1.jpg https://clck.ru/3UCs5z', 'article.png https://clck.ru/3Tmyte', '2.webp https://'],
-  'Grid/Grid': ['1.png https://clck.ru/3UCs7F', '2.jpeg https://'],
+  'Flex/Flex': ['1.jpg https://clck.ru/3UCs5z', 'article.png https://clck.ru/3Tmyte', '2.webp https://', '3.webp https://clck.ru/3V3vPJ'],
+  'Grid/Grid': ['1.png https://clck.ru/3UCs7F', '2.jpeg https://', '3.webp https://clck.ru/3V3vPJ'],
   'Background/Background': ['1.png https://clck.ru/3UCs8L', '2.jpeg https://',],
   'Radial-Gradient/Radial-Gradient': ['1.webp https://clck.ru/3UqRbn'],
   'Font/Font': ['1.webp https://'],
@@ -55,6 +57,7 @@ let objCSS = {
   'Animation-Transition/Animation-Transition': ['1.png https://', '2.jpg https://'],
   'Scroll-bar/Scroll-bar': ['1.jpeg https://'],
   'Scroll-Snap/Scroll-Snap': ['1.webp https://habr.com/ru/articles/498456/'],
+  'Anchor()/Anchor()': ['1.webp https://clck.ru/3V3vPJ'],
   'Media-CSS/Media-CSS': ['1.webp https://', '2.webp https://', '3.webp https://habr.com/ru/companies/ruvds/articles/1054454/'],
   'Справочник/Spravochnik': ['article.png https://clck.ru/3Tn2Nv'],
   'Разное/Raznoe': ['article.webp https://habr.com/ru/articles/1026574/', 'article.webp https://clck.ru/3UHBDW'],
