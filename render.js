@@ -198,13 +198,18 @@ over.addEventListener('click', () => {
 
 // Drag & Drop
 function drag(e) {
-  this.style.cursor = 'grabbing'
+  e.target.setPointerCapture(e.pointerId);
+  this.style.cursor = 'grabbing';
+  this.style.position = 'absolute';
+
+  let rect = this.getBoundingClientRect();
+  let y = e.clientY - rect.top;
+  let x = e.clientX - rect.left;
+
   let positionElem = e => {
     e.preventDefault();
-    let style = getComputedStyle(e.target);
-    e.target.style.position = 'absolute';
-    e.target.style.top = `${e.clientY - parseInt(style.height) / 2}px`;
-    e.target.style.left = `${e.clientX - parseInt(style.width) / 2}px`;
+    this.style.top = `${e.clientY - y}px`;
+    this.style.left = `${e.clientX - x}px`;
   }
 
   this.addEventListener('pointermove', positionElem);
