@@ -200,21 +200,24 @@ over.addEventListener('click', () => {
 function drag(e) {
   e.target.setPointerCapture(e.pointerId);
   this.style.cursor = 'grabbing';
-  this.style.position = 'absolute';
 
   let rect = this.getBoundingClientRect();
   let y = e.clientY - rect.top;
   let x = e.clientX - rect.left;
 
   let positionElem = e => {
+    this.style.position = 'absolute';
     e.preventDefault();
     this.style.top = `${e.clientY - y}px`;
     this.style.left = `${e.clientX - x}px`;
   }
 
   this.addEventListener('pointermove', positionElem);
-  this.addEventListener('pointerup', () => {
+
+  this.addEventListener('pointerup', function onPointerUp(e) {
     this.removeEventListener('pointermove', positionElem);
+    this.removeEventListener('pointerup', onPointerUp);
+    this.releasePointerCapture(e.pointerId);
     this.style.cursor = '';
   });
 }
