@@ -136,7 +136,7 @@ mainContainer.addEventListener('click', HandlingTheButtonClick);
 //Делегирование событий для главного контейнера
 function HandlingTheButtonClick(e) {
   // Обработка клика по кнопке добавления в закладки
-  if (e.target.tagName == 'SPAN') {
+  if (e.target.closest('span')) {
 
     strPath = e.target.closest('.box').dataset.path;
 
@@ -172,7 +172,7 @@ function saveBookmarks(arr) {
 }
 
 // Обработка клика по изображению для увеличения
-mainContainer.addEventListener('click', e => e.target.tagName == 'IMG' ? addOvelrlay(e.target.src) : null);
+mainContainer.addEventListener('click', e => e.target.closest('img') ? addOvelrlay(e.target.src) : null);
 
 function scrollImg(elems, e) {
   e.preventDefault();
