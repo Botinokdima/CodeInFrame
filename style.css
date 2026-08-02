@@ -7,6 +7,10 @@
     font-display: swap;
 }
 
+html {
+    background: url(bg_web.webp) center/cover;
+}
+
 html,
 body {
     margin: 0;
@@ -16,17 +20,6 @@ body {
     font-family: 'MyFont', sans-serif;
     /* font-family: 'my-font'; */
     /* overscroll-behavior:none; */
-}
-
-#main_container {
-    width: 100vw;
-    min-height: 100vh;
-    background: url(bg_web.webp) center/cover;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    gap: 100px 0;
 }
 
 .back {
@@ -60,15 +53,26 @@ body {
     transform: rotate(180deg);
 }
 
-#nav_container {
+#main_container {
     width: 100vw;
     min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 10px 0;
+}
+
+#nav_container {
+    width: 60vw;
+    min-height: 100vh;
     top: 0;
-    left: 0;
+    left: calc(50% - 30vw);
     position: absolute;
     display: flex;
-    justify-content: center;
     align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
 }
 
 #nav_container.active {
@@ -76,8 +80,11 @@ body {
 }
 
 .content {
-    width: 300px;
-    height: 300px;
+    width: calc(100% / 4);
+    /* width: 300px;
+    height: 300px; */
+    flex-grow: 1;
+    min-height: 400px;
     cursor: pointer;
     outline: 1px solid rgb(255, 255, 255);
     margin: 10px;
@@ -103,6 +110,7 @@ body {
 
 #start_bookmarks_block {
     background: url(block_bookmarks.webp) center/cover;
+    flex-grow: 2;
 }
 
 #online_generator {
@@ -110,8 +118,8 @@ body {
 }
 
 .menu_block {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     border: 2px solid beige;
     border-radius: 10px;
     background: url(menu.webp) no-repeat center/cover;
@@ -230,6 +238,7 @@ img {
 .imgOver {
     width: 1000px;
     touch-action: none;
+    transform-origin: center;
     /* min-height: 100%; */
 }
 
@@ -268,18 +277,19 @@ img {
 
 
 @media screen and (max-width: 480px) {
-    #nav_container {
-        flex-direction: column;
-        height: 100vh;
-    }
 
     #main_container {
         gap: 0;
     }
 
+    #nav_container {
+        width: 100vw;
+        left: 0;
+        min-height: 100vh;
+    }
+
     .content {
-        width: 200px;
-        height: 200px;
+        width: 100%;
     }
 
     .box {
@@ -297,21 +307,27 @@ img {
 
 
 
-@media screen and (min-width: 480px) and (max-width: 1100px) {
+@media screen and (min-width: 480px) and (max-width: 1270px) {
+
+    #main_container {
+        gap: 10px 0;
+    }
+
     #nav_container {
-        height: auto;
-        flex-wrap: wrap;
-        align-content: center;
+        width: 100vw;
+        left: 0;
         overflow-y: scroll;
+    }
+
+    .content {
+        width: calc(100% / 3);
+        flex-grow: 1;
     }
 
     #start_bookmarks_block {
         flex-grow: 2;
     }
 
-    .content {
-        flex-grow: 1;
-    }
 }
 
 @media (orientation: landscape) and (max-width: 1024px) {
