@@ -1,7 +1,7 @@
 // ==================== ДАННЫЕ КАТЕГОРИЙ ====================
 let objJS = {
   'Массивы/Massivy': ['1.png https://', '2.png https://', '3.png https://', '4.png https://', '5.png https://', '6.png https://', '7.png https://', '8.png https://', '9.png https://', '10.jpg https://clck.ru/3Tmymc',
-    '11.jpg https://clck.ru/3Tm2T7', '12.jpg https://clck.ru/3Tm2Zy', '13.png https://', '14.png https://', '15.webp https://clck.ru/3UqR2Q'
+    '11.jpg https://clck.ru/3Tm2T7', '12.jpg https://clck.ru/3Tm2Zy', '13.png https://', '14.png https://', '15.webp https://clck.ru/3UqR2Q', '16.webp https://clck.ru/3V6kzU', '17.webp https://clck.ru/3V6mBD'
   ],
   'Объекты/Obekty': ['1.webp https://clck.ru/3UUbQD', '2.webp https://metanit.com/web/javascript/4.1.php', '3.webp https://', '4.webp https://'],
   'Числа/Chisla': ['1.png https://', '2.png https://', '3.png https://', '4.png https://', '5.png https://', '6.png https://', '7.png https://', '8.png https://', '9.png https://', '10.png https://'],
@@ -27,9 +27,11 @@ let objJS = {
   'Аудио-Видео/Audio-Video': ['article.webp https://clck.ru/3TmyqJ', '1.webp https://'],
   'Атрибуты-тега-script/Atributy-tega-script': ['1.webp https://clck.ru/3Tmyra', '2.webp https://'],
   'Drag_&_Drop/Drag_&_Drop': ['1.webp https://learn.javascript.ru/drag-and-drop', '2.webp https://clck.ru/3Tmzrz', '3.webp https://habr.com/ru/articles/463463/', '4.webp https://'],
-  'Локальное-хранилище/Lokalnoe-hranilishe': ['1.png https://','2.webp https://'],
+  'Локальное-хранилище/Lokalnoe-hranilishe': ['1.png https://', '2.webp https://'],
   'Консоль/Konsol': ['article.png https://clck.ru/3Tmysr', '1.webp https://'],
-  'Разное/Raznoe': ['article.webp https://clck.ru/3TmzFQ', '1.png https://overapi.com/', '2.png https://htmlcheatsheet.com/js/', '3.webp https://xtool.ru/javascript/'],
+  'Разное/Raznoe': ['article.webp https://clck.ru/3TmzFQ', '1.png https://overapi.com/', '2.png https://htmlcheatsheet.com/js/', '3.webp https://xtool.ru/javascript/', '4.webp https://clck.ru/3V6krj', '5.webp https://clck.ru/3V6kvF',
+    '6.webp https://clck.ru/3V6mM4'
+  ],
   'path': ['JS']
 }
 
