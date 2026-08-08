@@ -55,6 +55,7 @@ let objCSS = {
   'Filter/Filter': ['1.png https://'],
   'Text-Stroke/Text-Stroke': ['1.webp https://'],
   'Stroke/Stroke': ['1.webp https://'],
+  'Caret/Caret': ['1.webp https://'],
   'Shape-Outside/Shape-Outside': ['1.jpeg https://'],
   'Animation-Transition/Animation-Transition': ['1.png https://', '2.jpg https://'],
   'Scroll-bar/Scroll-bar': ['1.jpeg https://'],
