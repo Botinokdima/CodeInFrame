@@ -30,7 +30,7 @@ let objJS = {
   'Локальное-хранилище/Lokalnoe-hranilishe': ['1.png https://', '2.webp https://'],
   'Консоль/Konsol': ['article.png https://clck.ru/3Tmysr', '1.webp https://'],
   'Разное/Raznoe': ['article.webp https://clck.ru/3TmzFQ', '1.png https://overapi.com/', '2.png https://htmlcheatsheet.com/js/', '3.webp https://xtool.ru/javascript/', '4.webp https://clck.ru/3V6krj', '5.webp https://clck.ru/3V6kvF',
-    '6.webp https://clck.ru/3V6mM4'
+    '6.webp https://clck.ru/3V6mM4', '7.webp https://clck.ru/3VALib'
   ],
   'path': ['JS']
 }
@@ -45,7 +45,7 @@ let objHTML = {
 
 let objCSS = {
   'Flex/Flex': ['1.jpg https://clck.ru/3UCs5z', 'article.png https://clck.ru/3Tmyte', '2.webp https://', '3.webp https://clck.ru/3V3vPJ'],
-  'Grid/Grid': ['1.png https://clck.ru/3UCs7F', '2.jpeg https://', '3.webp https://clck.ru/3V3vPJ'],
+  'Grid/Grid': ['1.png https://clck.ru/3UCs7F', '2.jpeg https://', '3.webp https://clck.ru/3V3vPJ', '4.webp https://clck.ru/3VALf4'],
   'Background/Background': ['1.png https://clck.ru/3UCs8L', '2.jpeg https://',],
   'Radial-Gradient/Radial-Gradient': ['1.webp https://clck.ru/3UqRbn'],
   'Font/Font': ['1.webp https://'],
@@ -56,6 +56,7 @@ let objCSS = {
   'Text-Stroke/Text-Stroke': ['1.webp https://'],
   'Stroke/Stroke': ['1.webp https://'],
   'Caret/Caret': ['1.webp https://'],
+  'Mask/Mask': ['1.webp https://clck.ru/3VALXQ'],
   'Shape-Outside/Shape-Outside': ['1.jpeg https://'],
   'Animation-Transition/Animation-Transition': ['1.png https://', '2.jpg https://'],
   'Scroll-bar/Scroll-bar': ['1.jpeg https://'],
@@ -63,7 +64,7 @@ let objCSS = {
   'Anchor()/Anchor()': ['1.webp https://clck.ru/3V3vPJ'],
   'Media-CSS/Media-CSS': ['1.webp https://', '2.webp https://', '3.webp https://habr.com/ru/companies/ruvds/articles/1054454/'],
   'Справочник/Spravochnik': ['article.png https://clck.ru/3Tn2Nv'],
-  'Разное/Raznoe': ['article.webp https://habr.com/ru/articles/1026574/', 'article.webp https://clck.ru/3UHBDW'],
+  'Разное/Raznoe': ['article.webp https://habr.com/ru/articles/1026574/', 'article.webp https://clck.ru/3UHBDW', 'article.webp https://clck.ru/3VALNY'],
   'Псевдоклассы/Psevdoklassy': ['1.webp https://clck.ru/3UrTiX'],
   'path': ['CSS']
 }
@@ -72,6 +73,7 @@ let objONLINE = {
   'Code_Generators/Code_Generators': ['1.webp https://webcode.tools/'],
   'Box_Shadow_online/Box_Shadow_online': ['1.webp https://active-vision.ru/box-shadow/'],
   'Shape-Outside_online/Shape-Outside_online': ['1.webp https://bennettfeely.com/clippy/'],
+  'Mask_online/Mask_online': ['1.webp https://clck.ru/3VALaZ'],
   'path': ['ONLINE']
 }
 

@@ -9,6 +9,7 @@
 
 html {
     background: url(bg_web.webp) center/cover;
+    user-select: none;
 }
 
 html,
@@ -237,7 +238,7 @@ img {
 
 .imgOver {
     width: 1000px;
-    touch-action: none;
+    touch-action: pinch-zoom;
     transform-origin: center;
     /* min-height: 100%; */
 }
