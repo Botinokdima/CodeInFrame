@@ -238,9 +238,13 @@ function viewBox(e) {
 }
 let stopTimerOut
 window.addEventListener('pointerdown', () => {
-  if (document.querySelectorAll('.box').length != 0) {
+  if (document.querySelectorAll('.box').length != 0 && window.matchMedia('(max-width: 480px)').matches) {
     btnView.style.display = 'block';
     clearTimeout(stopTimerOut);
     stopTimerOut = setTimeout(() => btnView.style.display = '', 4000);
   }
 })
+
+// if (window.matchMedia('(max-width: 768px)').matches) {
+//   console.log('Экраны мобильных устройств');
+// }
