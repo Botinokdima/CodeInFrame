@@ -229,7 +229,7 @@ img {
     justify-content: center;
     align-items: center;
     cursor: zoom-out;
-    z-index: 2;
+    z-index: 4;
 }
 
 .over>img {
@@ -275,6 +275,21 @@ img {
     background: url(delete-hover.png) no-repeat center/cover;
 }
 
+#btn_view {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 30px;
+    height: 30px;
+    background: url(view_one.png) no-repeat center/cover;
+    z-index: 3;
+    border: none;
+    display: none;
+}
+
+#btn_view.btn_view_active {
+    background: url(view_two.png) no-repeat center/cover;
+}
 
 
 @media screen and (max-width: 480px) {
@@ -287,14 +302,22 @@ img {
         width: 100vw;
         left: 0;
         min-height: 100vh;
+        flex-direction: column;
+
     }
 
     .content {
-        width: 100%;
+        width: 80%;
+        /* min-height: 100px; */
     }
 
     .box {
-        width: 80%;
+        width: 70%;
+    }
+
+    .box.btn_view_active {
+        width: calc(100% / 2 - 40px);
+        margin: 10px;
     }
 
     .imgOver {

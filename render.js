@@ -9,6 +9,7 @@ let menuBlock = document.querySelectorAll('.menu_block');
 let img = document.querySelectorAll('img');
 let over = document.querySelector('.over');
 let imgOver = document.querySelector('.imgOver');
+let btnView = document.querySelector('#btn_view');
 
 
 let step = 1;
@@ -32,7 +33,10 @@ for (const category of content) {
   })
 }
 
-function renderCategory() {
+function renderCategory(e) {
+  btnView.style.display = '';
+  btnView.classList = '';
+
   if (step == 1) {
     step++;
     mainContainer.innerHTML = '';
@@ -91,6 +95,8 @@ function renderCategory() {
 }
 
 for (const elems of btnBack) elems.addEventListener('click', renderCategory);
+for (const elems of btnBack) elems.addEventListener('pointerdown', e => e.stopPropagation());
+
 
 // Блок закладок
 startBookmarksBlock.addEventListener('click', function () {
@@ -221,3 +227,20 @@ function drag(e) {
     this.style.cursor = '';
   });
 }
+
+//Изминения вида блоков
+btnView.addEventListener('click', viewBox);
+
+function viewBox(e) {
+  e.stopPropagation();
+  this.classList.toggle('btn_view_active');
+  document.querySelectorAll('.box').forEach(elem => elem.classList.toggle('btn_view_active'));
+}
+let stopTimerOut
+window.addEventListener('pointerdown', () => {
+  if (document.querySelectorAll('.box').length != 0) {
+    btnView.style.display = 'block';
+    clearTimeout(stopTimerOut);
+    stopTimerOut = setTimeout(() => btnView.style.display = '', 4000);
+  }
+})
