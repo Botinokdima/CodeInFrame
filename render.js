@@ -239,7 +239,7 @@ function viewBox(e) {
 let stopTimerOut
 mainContainer.addEventListener('pointerdown', (e) => {
 
-  if (document.querySelectorAll('.box').length != 0 || document.querySelectorAll('.menu_block').length != 0 && window.matchMedia('(max-width: 480px)').matches) {
+  if (document.querySelectorAll('.box').length != 0 && window.matchMedia('(max-width: 480px)').matches || document.querySelectorAll('.menu_block').length != 0 && window.matchMedia('(max-width: 480px)').matches) {
 
     btnBack.forEach(elem => elem.classList.add('active'));
     if (step == 1 && window.matchMedia('(max-width: 480px)').matches) btnView.style.display = 'block';
