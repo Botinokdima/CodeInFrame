@@ -277,22 +277,23 @@ img {
 
 #btn_view {
     position: fixed;
-    bottom: 40px;
-    right: 40px;
+    bottom: 30px;
+    right: 30px;
     width: 30px;
     height: 30px;
-    background: url(view_one.png) no-repeat center/cover;
+    background: url(view_two.png) no-repeat center/cover;
     z-index: 3;
     border: none;
     display: none;
 }
 
 #btn_view.btn_view_active {
-    background: url(view_two.png) no-repeat center/cover;
+    background: url(view_one.png) no-repeat center/cover;
 }
 
 
 @media screen and (max-width: 480px) {
+
 
     #main_container {
         gap: 0;
@@ -307,8 +308,8 @@ img {
     }
 
     .content {
-        width: 80%;
-        /* min-height: 100px; */
+        width: 225px;
+        min-height: 225px;
     }
 
     .box {

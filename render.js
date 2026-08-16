@@ -36,12 +36,11 @@ for (const category of content) {
 function renderCategory(e) {
   btnView.style.display = '';
   btnView.classList = '';
-
   if (step == 1) {
     step++;
     mainContainer.innerHTML = '';
     navContainer.classList.add('active');
-    btnBack.forEach(elem => elem.classList.add('active'));
+    if (!window.matchMedia('(max-width: 480px)').matches) btnBack.forEach(elem => elem.classList.add('active'));
 
     for (const key in obj) {
 
@@ -69,7 +68,7 @@ function renderCategory(e) {
             </div>
          </div>`)
 
-            document.querySelectorAll('.box').forEach(elems => elems.addEventListener('dragstart', e => e.preventDefault()))
+            document.querySelectorAll('.box').forEach(elems => elems.addEventListener('dragstart', e => e.preventDefault()));
 
             for (const element of mainChildren) {
               arrBOOKMARKS.filter(e => e == element.dataset.path ? element.children[0].children[0].classList.add('addBookmarks') : '');
@@ -236,15 +235,19 @@ function viewBox(e) {
   this.classList.toggle('btn_view_active');
   document.querySelectorAll('.box').forEach(elem => elem.classList.toggle('btn_view_active'));
 }
+
 let stopTimerOut
-window.addEventListener('pointerdown', () => {
-  if (document.querySelectorAll('.box').length != 0 && window.matchMedia('(max-width: 480px)').matches) {
-    btnView.style.display = 'block';
+mainContainer.addEventListener('pointerdown', (e) => {
+
+  if (document.querySelectorAll('.box').length != 0 || document.querySelectorAll('.menu_block').length != 0 && window.matchMedia('(max-width: 480px)').matches) {
+
+    btnBack.forEach(elem => elem.classList.add('active'));
+    if (step == 1) btnView.style.display = 'block';
+
     clearTimeout(stopTimerOut);
-    stopTimerOut = setTimeout(() => btnView.style.display = '', 4000);
+    stopTimerOut = setTimeout(() => {
+      btnView.style.display = '';
+      btnBack.forEach(elem => elem.classList.remove('active'));
+    }, 4000);
   }
 })
-
-// if (window.matchMedia('(max-width: 768px)').matches) {
-//   console.log('Экраны мобильных устройств');
-// }
