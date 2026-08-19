@@ -38,6 +38,7 @@ let objJS = {
 
 let objHTML = {
   'Input/Input': ['1.webp https://', '2.webp https://', '3.webp https://'],
+  'Mark/Mark': ['1.webp https://'],
   'Emmet/Emmet': ['1.webp https://', 'article.webp https://clck.ru/3Tn2Do', '2.webp https://', '3.webp https://', '4.webp https://'],
   'Справочник/Spravochnik': ['1.webp https://webref.ru/html', '2.webp https://'],
   'Разное/Raznoe': ['1.webp https://clck.ru/3Uhkvb', '2.webp https://clck.ru/3Uhm7s'],
