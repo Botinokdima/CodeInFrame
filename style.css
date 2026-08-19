@@ -238,7 +238,7 @@ img {
 
 .imgOver {
     width: 1000px;
-    touch-action:none;
+    touch-action: none;
     transform-origin: center;
 }
 
