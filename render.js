@@ -9,6 +9,7 @@ let menuBlock = document.querySelectorAll('.menu_block');
 let img = document.querySelectorAll('img');
 let over = document.querySelector('.over');
 let imgOver = document.querySelector('.imgOver');
+let inpImgSize = document.querySelector('input[type=range]');
 let btnView = document.querySelector('#btn_view');
 
 
@@ -177,7 +178,15 @@ function saveBookmarks(arr) {
 }
 
 // Обработка клика по изображению для увеличения
-mainContainer.addEventListener('click', e => e.target.closest('img') ? addOvelrlay(e.target.src) : null);
+// mainContainer.addEventListener('click', e => e.target.closest('img') ? addOvelrlay(e.target.src) : null);
+mainContainer.addEventListener('click', e => {
+  if (e.target.closest('img')) {
+    addOvelrlay(e.target.src);
+    btnView.style.display = '';
+  }
+});
+
+inpImgSize.addEventListener('input', () => inpImgSize.previousElementSibling.style.width = `${inpImgSize.value}px`);
 
 function scrollImg(elems, e) {
   e.preventDefault();
@@ -199,6 +208,7 @@ over.addEventListener('click', () => {
   over.style.display = 'none';
   imgOver.style.position = '';
   imgOver.style.width = '';
+  inpImgSize.value = 300;
 });
 
 // Drag & Drop
