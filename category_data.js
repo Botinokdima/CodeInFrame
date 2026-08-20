@@ -67,6 +67,7 @@ let objCSS = {
   'Scroll-Snap/Scroll-Snap': ['1.webp https://habr.com/ru/articles/498456/'],
   'Anchor()/Anchor()': ['1.webp https://clck.ru/3V3vPJ'],
   'Media-CSS/Media-CSS': ['1.webp https://', '2.webp https://', '3.webp https://habr.com/ru/companies/ruvds/articles/1054454/'],
+  'Единицы-Измерения/Edinicy-Izmereniya': ['1.webp https://'],
   'Справочник/Spravochnik': ['article.png https://clck.ru/3Tn2Nv'],
   'Разное/Raznoe': ['article.webp https://habr.com/ru/articles/1026574/', 'article.webp https://clck.ru/3UHBDW', 'article.webp https://clck.ru/3VALNY'],
   'Псевдоклассы/Psevdoklassy': ['1.webp https://clck.ru/3UrTiX'],
