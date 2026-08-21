@@ -31,7 +31,7 @@ let objJS = {
   'Локальное-хранилище/Lokalnoe-hranilishe': ['1.png https://', '2.webp https://'],
   'Консоль/Konsol': ['article.png https://clck.ru/3Tmysr', '1.webp https://'],
   'Разное/Raznoe': ['article.webp https://clck.ru/3TmzFQ', '1.png https://overapi.com/', '2.png https://htmlcheatsheet.com/js/', '3.webp https://xtool.ru/javascript/', '4.webp https://clck.ru/3V6krj', '5.webp https://clck.ru/3V6kvF',
-    '6.webp https://clck.ru/3V6mM4', '7.webp https://clck.ru/3VALib'
+    '6.webp https://clck.ru/3V6mM4', '7.webp https://clck.ru/3VALib', '8.webp https://clck.ru/3VMY4q'
   ],
   'path': ['JS']
 }
