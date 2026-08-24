@@ -31,7 +31,7 @@ let objJS = {
   'Локальное-хранилище/Lokalnoe-hranilishe': ['1.png https://', '2.webp https://'],
   'Консоль/Konsol': ['article.png https://clck.ru/3Tmysr', '1.webp https://'],
   'Разное/Raznoe': ['article.webp https://clck.ru/3TmzFQ', '1.png https://overapi.com/', '2.png https://htmlcheatsheet.com/js/', '3.webp https://xtool.ru/javascript/', '4.webp https://clck.ru/3V6krj', '5.webp https://clck.ru/3V6kvF',
-    '6.webp https://clck.ru/3V6mM4', '7.webp https://clck.ru/3VALib', '8.webp https://clck.ru/3VMY4q'
+    '6.webp https://clck.ru/3V6mM4', '7.webp https://clck.ru/3VALib', '8.webp https://clck.ru/3VMY4q',
   ],
   'path': ['JS']
 }
@@ -49,6 +49,7 @@ let objCSS = {
   'Flex/Flex': ['1.jpg https://clck.ru/3UCs5z', 'article.png https://clck.ru/3Tmyte', '2.webp https://', '3.webp https://clck.ru/3V3vPJ'],
   'Grid/Grid': ['1.png https://clck.ru/3UCs7F', '2.jpeg https://', '3.webp https://clck.ru/3V3vPJ', '4.webp https://clck.ru/3VALf4'],
   'Place-Items/Place-Items': ['1.webp https://doka.guide/css/place-items/'],
+  'Position-Sticky/Position-Sticky': ['1.webp https://clck.ru/3VPpw7'],
   'Background/Background': ['1.png https://clck.ru/3UCs8L', '2.jpeg https://',],
   'Radial-Gradient/Radial-Gradient': ['1.webp https://clck.ru/3UqRbn'],
   'Font/Font': ['1.webp https://'],
@@ -69,7 +70,7 @@ let objCSS = {
   'Media-CSS/Media-CSS': ['1.webp https://', '2.webp https://', '3.webp https://habr.com/ru/companies/ruvds/articles/1054454/'],
   'Единицы-Измерения/Edinicy-Izmereniya': ['1.webp https://'],
   'Справочник/Spravochnik': ['article.png https://clck.ru/3Tn2Nv'],
-  'Разное/Raznoe': ['article.webp https://habr.com/ru/articles/1026574/', 'article.webp https://clck.ru/3UHBDW', 'article.webp https://clck.ru/3VALNY'],
+  'Разное/Raznoe': ['article.webp https://habr.com/ru/articles/1026574/', 'article.webp https://clck.ru/3UHBDW', 'article.webp https://clck.ru/3VALNY', '1.webp https://clck.ru/3VPpJY', '2.webp https://clck.ru/3VPpQH'],
   'Псевдоклассы/Psevdoklassy': ['1.webp https://clck.ru/3UrTiX'],
   'path': ['CSS']
 }
