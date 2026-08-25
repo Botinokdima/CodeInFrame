@@ -190,8 +190,8 @@ function sizeImg(e) {
   let img = this.previousElementSibling;
   let style = getComputedStyle(img).width;
 
-  if (e.target.closest('.zoom_img')) img.style.width = `${parseInt(style) + 25}px`;
-  if (e.target.closest('.zoom_out_img') && parseInt(style) > 300) img.style.width = `${parseInt(style) - 25}px`;
+  if (e.target.closest('.zoom_img')) img.style.width = `${parseInt(style) + 35}px`;
+  if (e.target.closest('.zoom_out_img') && parseInt(style) > 300) img.style.width = `${parseInt(style) - 35}px`;
 }
 
 
