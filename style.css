@@ -33,24 +33,25 @@ body {
     /* border-right: 1px solid gold; */
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
-}
+    background: url(icons/back.png) no-repeat center/50%;
 
-.back:hover {
-    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 14px -21px 0px 10px rgba(0, 0, 0, 0);
-}
+    &:hover {
+        box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 14px -21px 0px 10px rgba(0, 0, 0, 0);
 
-.back.active {
-    display: block;
+    }
+
+    &.active {
+        display: block;
+    }
 }
 
 .btn_left_back {
     left: 0;
-    background: url(arrow.png) no-repeat center/50%;
+
 }
 
 .btn_right_back {
     right: 0;
-    background: url(arrow.png) no-repeat center/50%;
     transform: rotate(180deg);
 }
 
@@ -74,27 +75,26 @@ body {
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
-}
 
-#nav_container.active {
-    display: none;
+    &.active {
+        display: none;
+    }
+
 }
 
 .content {
     width: calc(100% / 4);
-    /* width: 300px;
-    height: 300px; */
     flex-grow: 1;
     min-height: 400px;
     cursor: pointer;
     outline: 1px solid rgb(255, 255, 255);
     margin: 10px;
     border-radius: 10px;
-}
 
-.content:hover {
-    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 14px -21px 0px 10px rgba(0, 0, 0, 0);
-    outline: 5px solid #fff;
+    &:hover {
+        box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 14px -21px 0px 10px rgba(0, 0, 0, 0);
+        outline: 5px solid #fff;
+    }
 }
 
 #start_js_block {
@@ -138,13 +138,13 @@ body {
     transition: transform .3s linear;
     /* break-inside: avoid; 
      display: inline-block; */
-}
 
-.menu_block:hover {
-    border-color: yellow;
-    color: gold;
-    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 14px -21px 0px 10px rgba(0, 0, 0, 0);
-    transform: scale(1.1);
+    &:hover {
+        border-color: yellow;
+        color: gold;
+        box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 14px -21px 0px 10px rgba(0, 0, 0, 0);
+        transform: scale(1.1);
+    }
 }
 
 .box {
@@ -156,16 +156,15 @@ body {
     outline: 5px solid rgb(255, 255, 255);
     align-self: flex-start;
     position: relative;
+
+    &:hover {
+        box-shadow: 0px 10px 10px 10px rgba(34, 60, 80, 0.2) inset;
+        outline-color: orange
+    }
 }
 
 .box_img {
     background: #000000 url(loading.gif) no-repeat center/50%;
-}
-
-.box:hover,
-img:hover {
-    box-shadow: 0px 10px 10px 10px rgba(34, 60, 80, 0.2) inset;
-    outline-color: orange
 }
 
 .head_munu {
@@ -184,30 +183,32 @@ img:hover {
     height: 20px;
     text-align: center;
     cursor: pointer;
-}
 
-.btn_head:hover {
-    box-shadow: 0px 5px 10px 2px rgba(233, 141, 3, 0.2) inset;
+    &:hover {
+        box-shadow: 0px 5px 10px 2px rgba(233, 141, 3, 0.2) inset;
+    }
 }
 
 .btn_add_save {
-    background: url(add_like.png) no-repeat center/cover;
+    background: url(icons/add_like.png) no-repeat center/cover;
+
+    &:hover {
+        background: url(icons/add_like-hover.png) no-repeat center/cover;
+
+    }
 }
 
-.btn_add_save:hover {
-    background: url(add_like-hover.png) no-repeat center/cover;
-}
 
 .addBookmarks {
-    background: url(add_like-hover.png) no-repeat center/cover;
+    background: url(icons/add_like-hover.png) no-repeat center/cover;
 }
 
 .btn_go_site {
-    background: url(next_link.png) no-repeat center/cover;
-}
+    background: url(icons/next_link.png) no-repeat center/cover;
 
-.btn_go_site:hover {
-    background: url(next_link-hover.png) no-repeat center/cover;
+    &:hover {
+        background: url(icons/next_link-hover.png) no-repeat center/cover;
+    }
 }
 
 img {
@@ -242,13 +243,36 @@ img {
     transform-origin: center;
 }
 
-input[type=range] {
+#wrap_img_size {
+    display: flex;
+    width: 80px;
+    justify-content: space-around;
     position: fixed;
-    left: calc(50% - 75px);
+    left: calc(50% - 40px);
     bottom: 30px;
     z-index: 5;
     display: none;
 }
+
+.btn_img_size {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+
+    &:hover {
+        border: 1px solid #000;
+    }
+}
+
+.zoom_img {
+    background: #fff url(icons/zoom.png) no-repeat center/cover;
+}
+
+.zoom_out_img {
+    background: #fff url(icons/zoom_out.png) no-repeat center/cover;
+}
+
 
 .box:hover>.addLink,
 .box:hover>.delElems {
@@ -266,20 +290,20 @@ input[type=range] {
 }
 
 .addLink {
-    background: url(next_link2.png) no-repeat center/cover;
-}
+    background: url(icons/next_link2.png) no-repeat center/cover;
 
-.addLink:hover {
-    background: url(next_link2-hover.png) no-repeat center/cover;
+    &:hover {
+        background: url(icons/next_link-hover.png) no-repeat center/cover;
+    }
 }
 
 .delElems {
     right: 10px;
-    background: url(delete.png) no-repeat center/cover;
-}
+    background: url(icons/delete.png) no-repeat center/cover;
 
-.delElems:hover {
-    background: url(delete-hover.png) no-repeat center/cover;
+    &:hover {
+        background: url(icons/delete-hover.png) no-repeat center/cover;
+    }
 }
 
 #btn_view {
@@ -288,14 +312,14 @@ input[type=range] {
     right: 30px;
     width: 30px;
     height: 30px;
-    background: url(view_two.png) no-repeat center/cover;
+    background: url(icons/view_two.png) no-repeat center/cover;
     z-index: 3;
     border: none;
     display: none;
-}
 
-#btn_view.btn_view_active {
-    background: url(view_one.png) no-repeat center/cover;
+    &.btn_view_active {
+        background: url(icons/view_one.png) no-repeat center/cover;
+    }
 }
 
 
@@ -335,7 +359,7 @@ input[type=range] {
         width: 80%;
     }
 
-    input[type=range] {
+    #wrap_img_size {
         display: block;
     }
 

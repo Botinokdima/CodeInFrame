@@ -19,7 +19,10 @@
     <button id="btn_view"></button>
     <div class="over">
         <img src="" alt="" class="imgOver" loading="lazy" draggable="false">
-        <input type="range" name="range" min="300" max="2000" step="10" value="300" onclick="event.stopPropagation()">
+        <div id="wrap_img_size" onclick="event.stopPropagation()">
+            <button class="btn_img_size zoom_img"></button>
+            <button class="btn_img_size zoom_out_img"></button>
+        </div>
     </div>
 
     <div id="main_container"></div>

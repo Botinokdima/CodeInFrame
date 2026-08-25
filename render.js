@@ -9,7 +9,7 @@ let menuBlock = document.querySelectorAll('.menu_block');
 let img = document.querySelectorAll('img');
 let over = document.querySelector('.over');
 let imgOver = document.querySelector('.imgOver');
-let inpImgSize = document.querySelector('input[type=range]');
+let wrapImgSize = document.querySelector('#wrap_img_size');
 let btnView = document.querySelector('#btn_view');
 
 
@@ -178,7 +178,6 @@ function saveBookmarks(arr) {
 }
 
 // Обработка клика по изображению для увеличения
-// mainContainer.addEventListener('click', e => e.target.closest('img') ? addOvelrlay(e.target.src) : null);
 mainContainer.addEventListener('click', e => {
   if (e.target.closest('img')) {
     addOvelrlay(e.target.src);
@@ -186,7 +185,15 @@ mainContainer.addEventListener('click', e => {
   }
 });
 
-inpImgSize.addEventListener('input', () => inpImgSize.previousElementSibling.style.width = `${inpImgSize.value}px`);
+wrapImgSize.addEventListener('pointerdown', sizeImg);
+function sizeImg(e) {
+  let img = this.previousElementSibling;
+  let style = getComputedStyle(img).width;
+
+  if (e.target.closest('.zoom_img')) img.style.width = `${parseInt(style) + 25}px`;
+  if (e.target.closest('.zoom_out_img') && parseInt(style) > 300) img.style.width = `${parseInt(style) - 25}px`;
+}
+
 
 function scrollImg(elems, e) {
   e.preventDefault();
@@ -208,7 +215,6 @@ over.addEventListener('click', () => {
   over.style.display = 'none';
   imgOver.style.position = '';
   imgOver.style.width = '';
-  inpImgSize.value = 300;
 });
 
 // Drag & Drop
