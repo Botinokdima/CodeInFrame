@@ -58,6 +58,7 @@ let objCSS = {
   'Cursor/Cursor': ['1.webp https://'],
   'Filter/Filter': ['1.png https://'],
   'Text-Stroke/Text-Stroke': ['1.webp https://'],
+  'Transform/Transform': ['1.webp https://'],
   'Stroke/Stroke': ['1.webp https://'],
   'Caret/Caret': ['1.webp https://'],
   'Mask/Mask': ['1.webp https://clck.ru/3VALXQ'],
