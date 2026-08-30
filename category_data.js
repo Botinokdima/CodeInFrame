@@ -4,7 +4,7 @@ let objJS = {
     '11.jpg https://clck.ru/3Tm2T7', '12.jpg https://clck.ru/3Tm2Zy', '13.png https://', '14.png https://', '15.webp https://clck.ru/3UqR2Q', '16.webp https://clck.ru/3V6kzU', '17.webp https://clck.ru/3V6mBD',
     '18.webp https://'
   ],
-  'Объекты/Obekty': ['1.webp https://clck.ru/3UUbQD', '2.webp https://metanit.com/web/javascript/4.1.php', '3.webp https://', '4.webp https://'],
+  'Объекты/Obekty': ['1.webp https://clck.ru/3UUbQD', '2.webp https://metanit.com/web/javascript/4.1.php', '3.webp https://', '4.webp https://', '5.webp https://clck.ru/3VX3DH'],
   'Числа/Chisla': ['1.png https://', '2.png https://', '3.png https://', '4.png https://', '5.png https://', '6.png https://', '7.png https://', '8.png https://', '9.png https://', '10.png https://'],
   'Строки/Stroki': ['1.jpg https://', '2.jpeg https://', '3.webp https://'],
   'События/Sobytiya': ['1.png https://', '2.png https://', '3.png https://', '4.png https://', '5.png https://', '6.png https://', '7.png https://', '8.png https://', '9.png https://', '10.png https://', '11.png https://',

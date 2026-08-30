@@ -12,24 +12,68 @@ let imgOver = document.querySelector('.imgOver');
 let wrapImgSize = document.querySelector('#wrap_img_size');
 let btnView = document.querySelector('#btn_view');
 
+// Поиск
+let inpSearch = document.querySelector('#search');
+let btnSwitcher = document.querySelector('select');
+//let objSearch = sortCategory(objJS)
+
+
+
 
 let step = 1;
-let obj = null;
+let obj = {};
 let strPath;
 let mainChildren = mainContainer.children;
 let arrBOOKMARKS;
 localStorage.getItem('bookmarks') != null ? arrBOOKMARKS = JSON.parse(localStorage.getItem('bookmarks')) : arrBOOKMARKS = [];
 
 
+// btnSwitcher.addEventListener('change', () => {
+//    if (btnSwitcher.value == 'JS') objSearch = sortCategory(objJS);
+//    else if (btnSwitcher.value  == 'HTML')objSearch = sortCategory(objHTML);
+//    else if (btnSwitcher.value == 'CSS') objSearch = sortCategory(objCSS);
+//   // else if (category.dataset.category == 'ONLINE') obj = sortCategory(objONLINE);
+
+// })
+
+
+// inpSearch.addEventListener('input', () => {
+//    obj = {}
+//   // obj = sortCategory(objJS)
+//   mainContainer.innerHTML = '';
+//   // obj = { 'path': ['JS'] }
+
+
+
+//   for (const key in objSearch) {
+
+
+//     if (inpSearch.value != 0 && key.toLowerCase().startsWith(inpSearch.value.toLowerCase())) {
+
+
+
+//       obj[key] = objJS[key]
+//       // console.log(obj);
+     
+
+//       console.log(obj);
+      
+       
+//     }
+
+//   }
+//   navContainer.classList.add('active');
+//  renderCategory();
+// })
+
+// ----------------------------------------------------------
 //Рендерит меню категорий
 for (const category of content) {
   category.addEventListener('click', function () {
-
-    if (category.dataset.category == 'JS') obj = objJS;
-    else if (category.dataset.category == 'HTML') obj = objHTML;
-    else if (category.dataset.category == 'CSS') obj = objCSS;
-    else if (category.dataset.category == 'ONLINE') obj = objONLINE;
-
+    if (category.dataset.category == 'JS') obj = sortCategory(objJS);
+    else if (category.dataset.category == 'HTML') obj = sortCategory(objHTML);
+    else if (category.dataset.category == 'CSS') obj = sortCategory(objCSS);
+    else if (category.dataset.category == 'ONLINE') obj = sortCategory(objONLINE);
     renderCategory();
   })
 }
@@ -267,3 +311,10 @@ mainContainer.addEventListener('pointerdown', (e) => {
     }, 4000);
   }
 })
+
+// Сортировка категорий
+let sortCategory = obj => Object.fromEntries(Object.entries(obj).sort());
+
+
+
+
