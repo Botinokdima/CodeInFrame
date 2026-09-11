@@ -5,6 +5,7 @@ let btnBack = document.querySelectorAll('.back');
 let navContainer = document.querySelector('#nav_container');
 let startBookmarksBlock = document.querySelector('#start_bookmarks_block');
 let content = document.querySelectorAll('.content');
+content.forEach(elems => elems.style.height = getComputedStyle(content[0]).width);
 let menuBlock = document.querySelectorAll('.menu_block');
 let img = document.querySelectorAll('img');
 let over = document.querySelector('.over');
@@ -13,11 +14,15 @@ let wrapImgSize = document.querySelector('#wrap_img_size');
 let btnView = document.querySelector('#btn_view');
 
 // Поиск
+let blockSearh = document.querySelector('#block_searh');
+blockSearh.style.top = `${content[0].getBoundingClientRect().top / 2 - blockSearh.getBoundingClientRect().height / 2}px`;
+blockSearh.style.width = `${navContainer.getBoundingClientRect().width - 40}px`;
+blockSearh.style.left = `${navContainer.getBoundingClientRect().left + 20}px`;
+
 let inpSearch = document.querySelector('#search');
 let btnSwitcher = document.querySelector('select');
-//let objSearch = sortCategory(objJS)
-
-
+let objSearch = objJS;
+let addSearch = false;
 
 
 let step = 1;
@@ -28,43 +33,38 @@ let arrBOOKMARKS;
 localStorage.getItem('bookmarks') != null ? arrBOOKMARKS = JSON.parse(localStorage.getItem('bookmarks')) : arrBOOKMARKS = [];
 
 
-// btnSwitcher.addEventListener('change', () => {
-//    if (btnSwitcher.value == 'JS') objSearch = sortCategory(objJS);
-//    else if (btnSwitcher.value  == 'HTML')objSearch = sortCategory(objHTML);
-//    else if (btnSwitcher.value == 'CSS') objSearch = sortCategory(objCSS);
-//   // else if (category.dataset.category == 'ONLINE') obj = sortCategory(objONLINE);
 
-// })
-
-
-// inpSearch.addEventListener('input', () => {
-//    obj = {}
-//   // obj = sortCategory(objJS)
-//   mainContainer.innerHTML = '';
-//   // obj = { 'path': ['JS'] }
+btnSwitcher.addEventListener('change', () => {
+  inpSearch.value = '';
+  if (btnSwitcher.value == 'JS') objSearch = sortCategory(objJS);
+  else if (btnSwitcher.value == 'HTML') objSearch = sortCategory(objHTML);
+  else if (btnSwitcher.value == 'CSS') objSearch = sortCategory(objCSS);
+  // else if (category.dataset.category == 'ONLINE') obj = sortCategory(objONLINE);
+  //console.log(objSearch);
+})
 
 
+inpSearch.addEventListener('input', () => {
+  addSearch = true;
+  obj = { 'path': [btnSwitcher.value] };
 
-//   for (const key in objSearch) {
+  for (const key in objSearch) {
+    if (inpSearch.value != 0 && key.toLowerCase().startsWith(inpSearch.value.toLowerCase())) {
+      obj[key] = objSearch[key];
+    }
+    step = 1;
+    renderCategory();
+  }
 
+  if (inpSearch.value != 0) {
+    btnBack.forEach(elem => elem.classList.add('active'));
+    navContainer.classList.add('active');
+  } else {
+    navContainer.classList.remove('active');
+    step = 1;
+  }
 
-//     if (inpSearch.value != 0 && key.toLowerCase().startsWith(inpSearch.value.toLowerCase())) {
-
-
-
-//       obj[key] = objJS[key]
-//       // console.log(obj);
-     
-
-//       console.log(obj);
-      
-       
-//     }
-
-//   }
-//   navContainer.classList.add('active');
-//  renderCategory();
-// })
+})
 
 // ----------------------------------------------------------
 //Рендерит меню категорий
@@ -74,11 +74,13 @@ for (const category of content) {
     else if (category.dataset.category == 'HTML') obj = sortCategory(objHTML);
     else if (category.dataset.category == 'CSS') obj = sortCategory(objCSS);
     else if (category.dataset.category == 'ONLINE') obj = sortCategory(objONLINE);
+    addSearch = false;
     renderCategory();
   })
 }
 
 function renderCategory(e) {
+  addSearch == true ? blockSearh.classList.remove('active') : blockSearh.classList.add('active');
   btnView.style.display = '';
   btnView.classList = '';
   if (step == 1) {
@@ -98,6 +100,8 @@ function renderCategory(e) {
 
           step = 1;
           mainContainer.innerHTML = '';
+
+          if (!blockSearh.classList.contains('active') && addSearch == true) blockSearh.classList.add('active');
 
           for (const elems of obj[this.getAttribute('data-category')]) {
 
@@ -132,8 +136,9 @@ function renderCategory(e) {
   else if (step == 2) {
     step = 1;
     mainContainer.innerHTML = '';
-    navContainer.classList.remove('active');
     btnBack.forEach(elem => elem.classList.remove('active'));
+    navContainer.classList.remove('active');
+    blockSearh.classList.remove('active');
   }
 
 }
@@ -314,6 +319,11 @@ mainContainer.addEventListener('pointerdown', (e) => {
 
 // Сортировка категорий
 let sortCategory = obj => Object.fromEntries(Object.entries(obj).sort());
+
+
+
+
+
 
 
 
