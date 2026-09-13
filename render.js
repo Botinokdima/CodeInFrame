@@ -13,6 +13,8 @@ let imgOver = document.querySelector('.imgOver');
 let wrapImgSize = document.querySelector('#wrap_img_size');
 let btnView = document.querySelector('#btn_view');
 
+
+
 // Поиск
 let blockSearh = document.querySelector('#block_searh');
 blockSearh.style.top = `${content[0].getBoundingClientRect().top / 2 - blockSearh.getBoundingClientRect().height / 2}px`;
@@ -231,6 +233,7 @@ mainContainer.addEventListener('click', e => {
   if (e.target.closest('img')) {
     addOvelrlay(e.target.src);
     btnView.style.display = '';
+    // console.log(wrapImgSize.getBoundingClientRect());
   }
 });
 
