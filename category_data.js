@@ -50,7 +50,7 @@ let objHTML = {
 
 let objCSS = {
   'Flex/Flex': ['1.jpg https://clck.ru/3UCs5z', 'article.png https://clck.ru/3Tmyte', '2.webp https://', '3.webp https://clck.ru/3V3vPJ'],
-  'Grid/Grid': ['1.png https://clck.ru/3UCs7F', '2.jpeg https://', '3.webp https://clck.ru/3V3vPJ', '4.webp https://clck.ru/3VALf4'],
+  'Grid/Grid': ['1.png https://clck.ru/3UCs7F', '2.jpeg https://', '3.webp https://clck.ru/3V3vPJ', '4.webp https://clck.ru/3VALf4', '5.webp https://'],
   'Place-Items/Place-Items': ['1.webp https://doka.guide/css/place-items/'],
   'Position-Sticky/Position-Sticky': ['1.webp https://clck.ru/3VPpw7'],
   'Background/Background': ['1.png https://clck.ru/3UCs8L', '2.jpeg https://',],
