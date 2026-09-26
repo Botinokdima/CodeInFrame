@@ -63,6 +63,7 @@ inpSearch.addEventListener('input', () => {
     navContainer.classList.add('active');
   } else {
     navContainer.classList.remove('active');
+    btnBack.forEach(elem => elem.classList.remove('active'));
     step = 1;
   }
 
