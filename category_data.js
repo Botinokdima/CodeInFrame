@@ -32,6 +32,7 @@ let objJS = {
   'Дата/Data': ['1.jpg https://zalki-lab.ru/', '2.webp https://clck.ru/3UrU8T'],
   'Аудио-Видео/Audio-Video': ['article.webp https://clck.ru/3TmyqJ', '1.webp https://'],
   'Атрибуты-тега-script/Atributy-tega-script': ['1.webp https://clck.ru/3Tmyra', '2.webp https://'],
+  'IndexedDB/IndexedDB': ['1.webp https://clck.ru/3WLNDi'],
   'Drag_&_Drop/Drag_&_Drop': ['1.webp https://learn.javascript.ru/drag-and-drop', '2.webp https://clck.ru/3Tmzrz', '3.webp https://habr.com/ru/articles/463463/', '4.webp https://'],
   'Локальное-хранилище/Lokalnoe-hranilishe': ['1.png https://', '2.webp https://'],
   'Консоль/Konsol': ['article.png https://clck.ru/3Tmysr', '1.webp https://'],
