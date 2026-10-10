@@ -78,7 +78,7 @@ let objCSS = {
   'Единицы-Измерения/Edinicy-Izmereniya': ['1.webp https://'],
   'Справочник/Spravochnik': ['article.png https://clck.ru/3Tn2Nv'],
   'Разное/Raznoe': ['article.webp https://habr.com/ru/articles/1026574/', 'article.webp https://clck.ru/3UHBDW', 'article.webp https://clck.ru/3VALNY', '1.webp https://clck.ru/3VPpJY', '2.webp https://clck.ru/3VPpQH'],
-  'Псевдоклассы/Psevdoklassy': ['1.webp https://clck.ru/3UrTiX'],
+  'Псевдоклассы/Psevdoklassy': ['1.webp https://clck.ru/3UrTiX','2.webp https://'],
   'path': ['CSS']
 }
 
