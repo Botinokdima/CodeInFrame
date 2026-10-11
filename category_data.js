@@ -65,6 +65,7 @@ let objCSS = {
   'Filter/Filter': ['1.png https://'],
   'Text-Stroke/Text-Stroke': ['1.webp https://'],
   'Transform/Transform': ['1.webp https://'],
+  'Perspective/Perspective': ['1.webp https://clck.ru/3WRiYc'],
   'Stroke/Stroke': ['1.webp https://'],
   'Caret/Caret': ['1.webp https://'],
   'Mask/Mask': ['1.webp https://clck.ru/3VALXQ'],
