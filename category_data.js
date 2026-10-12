@@ -71,7 +71,7 @@ let objCSS = {
   'Mask/Mask': ['1.webp https://clck.ru/3VALXQ'],
   'Shape-Outside/Shape-Outside': ['1.jpeg https://'],
   'Animation-Transition/Animation-Transition': ['1.png https://', '2.jpg https://'],
-  'Content-Visibility/Content-Visibility': ['1.webp https://', '2.webp https://'],
+  'Content-Visibility/Content-Visibility': ['1.webp https://', '2.webp https://clck.ru/3WT4MP'],
   'Touch-Action/Touch-Action': ['1.webp https://'],
   'Scroll-bar/Scroll-bar': ['1.jpeg https://'],
   'Scroll-Snap/Scroll-Snap': ['1.webp https://habr.com/ru/articles/498456/'],
