@@ -71,6 +71,7 @@ let objCSS = {
   'Mask/Mask': ['1.webp https://clck.ru/3VALXQ'],
   'Shape-Outside/Shape-Outside': ['1.jpeg https://'],
   'Animation-Transition/Animation-Transition': ['1.png https://', '2.jpg https://'],
+  'Content-Visibility/Content-Visibility': ['1.webp https://', '2.webp https://'],
   'Touch-Action/Touch-Action': ['1.webp https://'],
   'Scroll-bar/Scroll-bar': ['1.jpeg https://'],
   'Scroll-Snap/Scroll-Snap': ['1.webp https://habr.com/ru/articles/498456/'],
@@ -79,7 +80,7 @@ let objCSS = {
   'Единицы-Измерения/Edinicy-Izmereniya': ['1.webp https://'],
   'Справочник/Spravochnik': ['article.png https://clck.ru/3Tn2Nv'],
   'Разное/Raznoe': ['article.webp https://habr.com/ru/articles/1026574/', 'article.webp https://clck.ru/3UHBDW', 'article.webp https://clck.ru/3VALNY', '1.webp https://clck.ru/3VPpJY', '2.webp https://clck.ru/3VPpQH'],
-  'Псевдоклассы/Psevdoklassy': ['1.webp https://clck.ru/3UrTiX','2.webp https://'],
+  'Псевдоклассы/Psevdoklassy': ['1.webp https://clck.ru/3UrTiX', '2.webp https://'],
   'path': ['CSS']
 }
 
