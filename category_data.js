@@ -59,6 +59,7 @@ let objCSS = {
   'Background/Background': ['1.png https://clck.ru/3UCs8L', '2.jpeg https://',],
   'Radial-Gradient/Radial-Gradient': ['1.webp https://clck.ru/3UqRbn'],
   'Font/Font': ['1.webp https://'],
+  'Font-Variant-Numeric/Font-Variant-Numeric': ['1.webp https://clck.ru/3WT4R8'],
   'Border/Border': ['1.webp https://', '2.webp https://'],
   'Columns/Columns': ['1.webp https://', 'article.webp https://habr.com/ru/articles/469395/'],
   'Cursor/Cursor': ['1.webp https://'],
