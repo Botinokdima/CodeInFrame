@@ -51,7 +51,7 @@ let objHTML = {
   'Favicon/Favicon': ['1.webp https://'],
   'Emmet/Emmet': ['1.webp https://', 'article.webp https://clck.ru/3Tn2Do', '2.webp https://', '3.webp https://', '4.webp https://'],
   'Справочник/Spravochnik': ['1.webp https://webref.ru/html', '2.webp https://'],
-  'Разное/Raznoe': ['1.webp https://clck.ru/3Uhkvb', '2.webp https://clck.ru/3Uhm7s'],
+  'Разное/Raznoe': ['1.webp https://clck.ru/3Uhkvb', '2.webp https://clck.ru/3Uhm7s', '3.webp https://'],
   'path': ['HTML']
 }
 
@@ -84,7 +84,9 @@ let objCSS = {
   'Media-CSS/Media-CSS': ['1.webp https://', '2.webp https://', '3.webp https://habr.com/ru/companies/ruvds/articles/1054454/'],
   'Единицы-Измерения/Edinicy-Izmereniya': ['1.webp https://'],
   'Справочник/Spravochnik': ['article.png https://clck.ru/3Tn2Nv'],
-  'Разное/Raznoe': ['article.webp https://habr.com/ru/articles/1026574/', 'article.webp https://clck.ru/3UHBDW', 'article.webp https://clck.ru/3VALNY', '1.webp https://clck.ru/3VPpJY', '2.webp https://clck.ru/3VPpQH'],
+  'Разное/Raznoe': ['article.webp https://habr.com/ru/articles/1026574/', 'article.webp https://clck.ru/3UHBDW', 'article.webp https://clck.ru/3VALNY', '1.webp https://clck.ru/3VPpJY', '2.webp https://clck.ru/3VPpQH',
+    '3.webp https://'
+  ],
   'Псевдоклассы/Psevdoklassy': ['1.webp https://clck.ru/3UrTiX', '2.webp https://', '3.webp https://clck.ru/3WbLNS', '4.webp https://clck.ru/3Wk3nB'],
   'path': ['CSS']
 }
